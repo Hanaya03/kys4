@@ -25,6 +25,9 @@ public class hudManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            removeFromInventory(1);
+        }
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
             shiftInventoryLeft();
         }
@@ -46,6 +49,19 @@ public class hudManager : MonoBehaviour
             GameObject newItem = Instantiate(itemList[itemList.Count - 1], transform.GetChild(0));
             newItem.transform.position = transform.GetChild(0).GetChild(itemList.Count - 1).position;
         }
+    }
+
+    public void removeFromInventory(int index){
+        itemList.RemoveAt(index);
+        if(index > startingItemDisplayIndex && index < startingItemDisplayIndex + 4){
+            for(int x = 0; x < maxItemDisplayCount && x < itemList.Count; x++){
+                Destroy(transform.GetChild(0).GetChild(maxItemDisplayCount + x).gameObject);
+            }
+            for(int x = 0; x < maxItemDisplayCount && x < itemList.Count; x++){
+                GameObject newItem = Instantiate(itemList[startingItemDisplayIndex + x], transform.GetChild(0));
+                newItem.transform.position = transform.GetChild(0).GetChild(x).position;
+            }
+        } 
     }
 
     public void shiftInventoryRight(){
