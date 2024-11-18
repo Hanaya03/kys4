@@ -8,11 +8,7 @@ namespace Interactables
     [HideMonoScript]
     public class Item : Interactives
     {
-<<<<<<< Updated upstream
-        
-=======
         [SerializeField] public GameObject itemObject;
->>>>>>> Stashed changes
     }
 }
 
