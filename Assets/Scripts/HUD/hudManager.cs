@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class hudManager : MonoBehaviour
 {  
-    private int startingItemDisplayIndex = 0;
+    private int startingItemDisplayIndex;
     private int maxItemDisplayCount = 4;
-    private List<GameObject> itemList = new List<GameObject>();
+    public List<GameObject> itemList = new List<GameObject>();
     [SerializeField] GameObject arrowObject;
     [SerializeField] GameObject bloodVialObject;
     // Start is called before the first frame update
@@ -26,7 +25,7 @@ public class hudManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1)){
-            removeFromInventory(1);
+            removeFromInventory(startingItemDisplayIndex);
         }
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
             shiftInventoryLeft();
@@ -51,15 +50,23 @@ public class hudManager : MonoBehaviour
         }
     }
 
-    public void removeFromInventory(int index){
+    public void removeFromInventory(int index)
+    {
+        int startIndex = index;
         itemList.RemoveAt(index);
-        if(index > startingItemDisplayIndex && index < startingItemDisplayIndex + 4){
-            for(int x = 0; x < maxItemDisplayCount && x < itemList.Count; x++){
-                Destroy(transform.GetChild(0).GetChild(maxItemDisplayCount + x).gameObject);
+        if(index >= startingItemDisplayIndex && index < startingItemDisplayIndex + maxItemDisplayCount){
+            for(int x = index - startingItemDisplayIndex + maxItemDisplayCount; 
+                x < index - startingItemDisplayIndex + 2*maxItemDisplayCount && x < itemList.Count + maxItemDisplayCount + 1; x++){
+                Destroy(transform.GetChild(0).GetChild(x).gameObject);
             }
-            for(int x = 0; x < maxItemDisplayCount && x < itemList.Count; x++){
-                GameObject newItem = Instantiate(itemList[startingItemDisplayIndex + x], transform.GetChild(0));
-                newItem.transform.position = transform.GetChild(0).GetChild(x).position;
+            if (startingItemDisplayIndex + maxItemDisplayCount == itemList.Count + 1)
+            {
+                if (startingItemDisplayIndex > 0) {startingItemDisplayIndex--;}
+                startIndex = startingItemDisplayIndex;
+            }
+            for(int x = startIndex; x < startingItemDisplayIndex + maxItemDisplayCount && x < itemList.Count; x++){
+                GameObject newItem = Instantiate(itemList[x], transform.GetChild(0));
+                newItem.transform.position = transform.GetChild(0).GetChild(x - startIndex).position;
             }
         } 
     }
