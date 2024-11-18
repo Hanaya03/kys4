@@ -17,10 +17,22 @@ namespace Interactables
             EnableInteraction,
         }
 
+<<<<<<< Updated upstream
+=======
+        // TODO: Unfnished AddItem script 
+>>>>>>> Stashed changes
         public void AddItem()
         {
             
         }
+<<<<<<< Updated upstream
+=======
+
+        public void UseItem()
+        {
+            Instantiate(gameObject, Camera.main.ScreenToWorldPoint(Input.mousePosition), new Quaternion(0, 0, 0, 0));
+        }
+>>>>>>> Stashed changes
         
     }
 }
