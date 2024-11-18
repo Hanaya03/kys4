@@ -11,4 +11,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuScenes/MainMenuScene.unity
     guid: 8206c0825fe244cada0418ab339b7c8a
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/WinScene.unity
+    guid: 5b72240f945ce4def93e5edaf6635e56
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/LoseScene.unity
+    guid: 2d74a44e0b04f415994af8a2764f85fa
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/MeatClosetRestroom.unity
+    guid: 419f183caa48847e28ffdf94f54d936b
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/HuntingLodge.unity
+    guid: c118ad1b3913c42cfa60f36c57725d14
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/MansionEntranceHall.unity
+    guid: 0d538ecd989eb412fb73cb0dd98b6025
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Library.unity
+    guid: 35bc55271027e47b29ee9cbd06f53285
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Basement.unity
+    guid: 72bba47e5a8de489da0e8272814e2b1a
   m_configObjects: {}

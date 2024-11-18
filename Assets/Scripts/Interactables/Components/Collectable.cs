@@ -1,14 +1,17 @@
 using TriInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Interactables.Components
 {
     [HideMonoScript]
     public class Collectable : MonoBehaviour
     {
-        public void OnMouseDown()
+        public UnityEvent onAddItem;
+        
+        void OnMouseDown()
         {
-            // Collect Code Here
+            onAddItem.Invoke();
         }
     }
 }

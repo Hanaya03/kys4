@@ -1,6 +1,7 @@
 using UnityEngine;
 using TriInspector;
 using Interactables.Components;
+using Interactables.Data;
 
 namespace Interactables
 {
@@ -9,7 +10,7 @@ namespace Interactables
     [HideMonoScript]
     public class Interactives : MonoBehaviour
     {
-        
+        [SerializeField] public InteractiveData interactive;
     }
 }
 
