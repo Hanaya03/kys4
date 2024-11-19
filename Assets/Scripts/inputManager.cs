@@ -20,10 +20,6 @@ namespace HUD
                inventoryHUD.SetActive(!inventoryHUD.activeSelf);
            }
        }
-
-       public void invertHudStatus(){
-            inventoryHUD.SetActive(!inventoryHUD.activeSelf);
-       }
    } 
 }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace HUD
@@ -10,6 +11,7 @@ namespace HUD
         private int maxItemDisplayCount = 6;
         private int screenWidth = 1920;
         public List<GameObject> itemList = new List<GameObject>();
+        private int usingItem;
         [SerializeField] GameObject arrowObject;
         [SerializeField] GameObject bloodVialObject;
         // Start is called before the first frame update
@@ -37,13 +39,13 @@ namespace HUD
             if(Input.GetKeyDown(KeyCode.RightArrow)){
                 shiftInventoryRight();
             }
-            if(Input.GetKeyDown("space")){
+            /*if(Input.GetKeyDown("space")){
                 if(itemList.Count % 2 == 0){
                     addToInventory(arrowObject);
                 }else{
                     addToInventory(bloodVialObject);
                 }
-            }
+            }*/
         }
     
         public void addToInventory(GameObject toAdd){
@@ -61,6 +63,27 @@ namespace HUD
             if(index >= startingItemDisplayIndex && index < startingItemDisplayIndex + maxItemDisplayCount){
                 for(int x = index - startingItemDisplayIndex + maxItemDisplayCount; 
                     x < index - startingItemDisplayIndex + 2*maxItemDisplayCount && x < itemList.Count + maxItemDisplayCount + 1; x++){
+                    Destroy(transform.GetChild(0).GetChild(x).gameObject);
+                }
+                if (startingItemDisplayIndex + maxItemDisplayCount == itemList.Count + 1)
+                {
+                    if (startingItemDisplayIndex > 0) {startingItemDisplayIndex--;}
+                    startIndex = startingItemDisplayIndex;
+                }
+                for(int x = startIndex; x < startingItemDisplayIndex + maxItemDisplayCount && x < itemList.Count; x++){
+                    GameObject newItem = Instantiate(itemList[x], transform.GetChild(0));
+                    newItem.transform.position = transform.GetChild(0).GetChild(x - startIndex).position;
+                }
+            } 
+        }
+        
+        public void removeFromInventory()
+        {
+            int startIndex = usingItem;
+            itemList.RemoveAt(usingItem);
+            if(usingItem >= startingItemDisplayIndex && usingItem < startingItemDisplayIndex + maxItemDisplayCount){
+                for(int x = usingItem - startingItemDisplayIndex + maxItemDisplayCount; 
+                    x < usingItem - startingItemDisplayIndex + 2*maxItemDisplayCount && x < itemList.Count + maxItemDisplayCount + 1; x++){
                     Destroy(transform.GetChild(0).GetChild(x).gameObject);
                 }
                 if (startingItemDisplayIndex + maxItemDisplayCount == itemList.Count + 1)
@@ -95,6 +118,17 @@ namespace HUD
                     newItem.transform.position = transform.GetChild(0).GetChild(x).position;
                 }
             }
+        }
+        
+        public void invertHudStatus()
+        {
+            GameObject child = transform.GetChild(0).gameObject;
+            child.SetActive(!child.activeSelf);
+        }
+
+        public void SetUsingItem(int index)
+        {
+            usingItem = index;
         }
     }
 }

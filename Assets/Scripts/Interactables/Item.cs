@@ -1,3 +1,5 @@
+using System;
+using HUD;
 using Interactables.Components;
 using TriInspector;
 using UnityEngine;
@@ -9,6 +11,8 @@ namespace Interactables
     public class Item : Interactives
     {
         [SerializeField] public GameObject itemObject;
+        
+        
     }
 }
 

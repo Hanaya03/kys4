@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Interactables.Data;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,11 +14,14 @@ namespace Interactables.Components
         private bool _dragging;
         private Transform _interactObject;
             
-        private void Start()
+        private async void Start()
         {
             _dragging = true;
+            await UniTask.Delay(10);
+            item.Hud.invertHudStatus();
             /*_permPos = transform.position;*/ /* Set the permanent position of the item to its position in the scene at
-        the beginning of the game */}
+        the beginning of the game */
+        }
         
         // When the mouse is dragging a collider, set _dragging to true
         /*public void OnMouseDrag() { _dragging = true; }*/
@@ -49,7 +53,10 @@ namespace Interactables.Components
                             throw new ArgumentOutOfRangeException();
                     }
                     // NOTE: Fix RemoveItem function
-                    if(combination.consumeItem){ /* Remove Item */ ;}
+                    if (combination.consumeItem)
+                    {
+                        item.Hud.removeFromInventory();
+                    }
                     else {} // Move the item back into its permanent position
                     break;
                 }
