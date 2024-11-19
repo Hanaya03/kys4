@@ -25,6 +25,7 @@ namespace Interactables
 
         public void UseItem()
         {
+            Debug.Log("Input!");
             Instantiate(gameObject, Camera.main.ScreenToWorldPoint(Input.mousePosition), new Quaternion(0, 0, 0, 0));
         }
         

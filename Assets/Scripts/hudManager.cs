@@ -7,7 +7,8 @@ namespace HUD
     public class hudManager : MonoBehaviour
     {  
         private int startingItemDisplayIndex;
-        private int maxItemDisplayCount = 4;
+        private int maxItemDisplayCount = 6;
+        private int screenWidth = 1920;
         public List<GameObject> itemList = new List<GameObject>();
         [SerializeField] GameObject arrowObject;
         [SerializeField] GameObject bloodVialObject;
@@ -18,7 +19,7 @@ namespace HUD
                 GameObject itemDisplayPostion = new GameObject("ItemPosition" + x);
                 itemDisplayPostion.transform.SetParent(transform.GetChild(0));
                 Vector3 newPos = itemDisplayPostion.transform.position;
-                newPos.x = 240 + x * 480;
+                newPos.x = (screenWidth/(maxItemDisplayCount * 2)) + x * (screenWidth/maxItemDisplayCount);
                 newPos.y = 270;
                 itemDisplayPostion.transform.position = newPos;
             }
