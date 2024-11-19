@@ -1,16 +1,15 @@
-using Cysharp.Threading.Tasks;
 using TriInspector;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Initializes some important game settings when the persistent scene loads in
+/// </summary>
 [HideMonoScript]
 public class Initializer : MonoBehaviour
 {
-
-    [Scene][SerializeField] private string[] gameScenes;
-    
     private void Start()
     {
+        // Loads the Game's Settings from the ScriptableObject in Assets/Resources
         MasterScript.Settings = Resources.Load<GameSettings>("GameSettings");
     }
 }

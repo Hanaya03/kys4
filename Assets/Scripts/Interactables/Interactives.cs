@@ -6,8 +6,9 @@ using HUD;
 
 namespace Interactables
 {
-    
-    [RequireComponent(typeof(Inspectable))]
+    /// <summary> Parent class, interactives are entities in the scene that can be inspected and "interacted"
+    /// with in some way</summary>
+    [RequireComponent(typeof(Inspectable))] // Ensure the "Inspectable" script is present in this GameObject
     [HideMonoScript]
     public class Interactives : MonoBehaviour
     {

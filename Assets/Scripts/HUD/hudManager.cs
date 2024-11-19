@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -14,9 +13,11 @@ namespace HUD
         private int usingItem;
         [SerializeField] GameObject arrowObject;
         [SerializeField] GameObject bloodVialObject;
+
         // Start is called before the first frame update
         void Start()
         {
+
             for(int x = 0; x < maxItemDisplayCount; x++){
                 GameObject itemDisplayPostion = new GameObject("ItemPosition" + x);
                 itemDisplayPostion.transform.SetParent(transform.GetChild(0));
