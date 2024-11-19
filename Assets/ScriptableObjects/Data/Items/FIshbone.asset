@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: Items/Fishbone
   inspectMessage: []
-  combinations: []
+  combinations:
+  - itemID: Static/Door/HuntingLodge
+    function: 1
+    consumeItem: 1
+    giveID: 

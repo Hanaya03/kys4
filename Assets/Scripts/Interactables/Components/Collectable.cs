@@ -1,13 +1,12 @@
 using TriInspector;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Interactables.Components
 {
     [HideMonoScript]
     public class Collectable : Inspectable
     {
-        
+        [Tooltip("The Item Script in this Game Object")]
         [SerializeField] protected Item item;
         
         void OnMouseDown()

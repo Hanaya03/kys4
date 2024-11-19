@@ -11,6 +11,7 @@ namespace Interactables
     [HideMonoScript]
     public class Interactives : MonoBehaviour
     {
+        [Tooltip("The Data for this Object: Assets/ScriptableObjects/Data")]
         [SerializeField] public InteractiveData interactive;
         public hudManager Hud { private set; get; }
         private GameObject _hudObject;

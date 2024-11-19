@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad394703c152e4045ae6f4d875382ff6, type: 3}
-  m_Name: BrokenArrow
+  m_Name: LooseAntler
   m_EditorClassIdentifier: 
-  guid: Items/BrokenArrow
+  guid: Items/LooseAntler
   inspectMessage: []
-  combinations: []
+  combinations:
+  - itemID: Static/BearTrap
+    function: 0
+    consumeItem: 1
+    giveID: Items/Keys/Rusty

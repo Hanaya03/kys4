@@ -10,15 +10,16 @@ namespace Interactables
     [HideMonoScript]
     public class Static : Interactives
     {
-
+        [Tooltip("Whether this Static can be interacted with.")]
         public bool activated;
-
+        
         public enum StaticFunctions
         {
             ChangeScene,
             
         }
 
+        [Tooltip("The function that will execute when interacting with this script.")]
         public StaticFunctions staticFunction;
 
         public void RunStaticFunction()

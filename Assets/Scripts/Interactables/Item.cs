@@ -10,6 +10,7 @@ namespace Interactables
     [HideMonoScript]
     public class Item : Interactives
     {
+        [Tooltip("The item's corresponding UI Object: Assets/Prefabs/InvUI")]
         [SerializeField] public GameObject itemObject;
         
         

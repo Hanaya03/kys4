@@ -8,7 +8,7 @@ namespace Interactables.Components
 {
     public class Draggable : Inspectable
     {
-
+        [Tooltip("The Inventory Item Script of this Object")]
         [SerializeField] private InvItem item;
         private Vector3 _startPos;
         private bool _dragging;
