@@ -22,7 +22,7 @@ namespace HUD
                 itemDisplayPostion.transform.SetParent(transform.GetChild(0));
                 Vector3 newPos = itemDisplayPostion.transform.position;
                 newPos.x = (screenWidth/(maxItemDisplayCount * 2)) + x * (screenWidth/maxItemDisplayCount);
-                newPos.y = 270;
+                newPos.y = 160;
                 itemDisplayPostion.transform.position = newPos;
             }
         }
@@ -39,13 +39,13 @@ namespace HUD
             if(Input.GetKeyDown(KeyCode.RightArrow)){
                 shiftInventoryRight();
             }
-            /*if(Input.GetKeyDown("space")){
+            if(Input.GetKeyDown("space")){
                 if(itemList.Count % 2 == 0){
                     addToInventory(arrowObject);
                 }else{
                     addToInventory(bloodVialObject);
                 }
-            }*/
+            }
         }
     
         public void addToInventory(GameObject toAdd){
