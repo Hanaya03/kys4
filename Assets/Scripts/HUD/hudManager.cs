@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using TMPro;
 
 namespace HUD
 {
     public class hudManager : MonoBehaviour
-    {  
+    {
+        private TextMeshProUGUI tmpUI;
+        private  GameObject textObject;
         private int startingItemDisplayIndex;
         private int maxItemDisplayCount = 6;
         private int screenWidth = 1920;
@@ -23,9 +26,19 @@ namespace HUD
                 itemDisplayPostion.transform.SetParent(transform.GetChild(0));
                 Vector3 newPos = itemDisplayPostion.transform.position;
                 newPos.x = (screenWidth/(maxItemDisplayCount * 2)) + x * (screenWidth/maxItemDisplayCount);
-                newPos.y = 270;
+                newPos.y = 160;
                 itemDisplayPostion.transform.position = newPos;
             }
+            textObject = new GameObject("TextMeshProUI");
+            textObject.transform.SetParent(transform.GetChild(0), false);
+            tmpUI = textObject.AddComponent<TextMeshProUGUI>();
+
+            Vector3 newTextPos = textObject.transform.position;
+            newTextPos.x = 100;
+            newTextPos.y = 200;
+            textObject.transform.position = newTextPos;
+            
+            tmpUI.fontSize = 48;
         }
     
         // Update is called once per frame
@@ -40,13 +53,6 @@ namespace HUD
             if(Input.GetKeyDown(KeyCode.RightArrow)){
                 shiftInventoryRight();
             }
-            /*if(Input.GetKeyDown("space")){
-                if(itemList.Count % 2 == 0){
-                    addToInventory(arrowObject);
-                }else{
-                    addToInventory(bloodVialObject);
-                }
-            }*/
         }
     
         public void addToInventory(GameObject toAdd){
@@ -138,6 +144,25 @@ namespace HUD
         public void CollectAudio()
         {
             audio.Play();
+        }
+        
+        public void changeText(string newText)
+        {
+            tmpUI.text = newText;
+        }
+
+        public void hideItems(){
+            transform.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            for(int x = 7; x < transform.GetChild(0).childCount; x++){
+                transform.GetChild(0).GetChild(x).gameObject.SetActive(false);
+            }
+        }
+
+        public void showItems(){
+            transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            for(int x = 7; x < transform.GetChild(0).childCount; x++){
+                transform.GetChild(0).GetChild(x).gameObject.SetActive(true);
+            }
         }
     }
 }
