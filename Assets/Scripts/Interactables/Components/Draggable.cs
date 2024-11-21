@@ -51,7 +51,7 @@ namespace Interactables.Components
                         // NOTE: Fix GiveItem function
                         case InvItem.CombinationFunctions.GiveItem:
                             var newItem = new InvItem(combination.giveID);
-                            newItem.AddItem();
+                            // newItem.AddItem();
                             break;
                         case InvItem.CombinationFunctions.EnableInteraction:
                             interactable.activated = true; break; // Enable the interactable functionality of the static
