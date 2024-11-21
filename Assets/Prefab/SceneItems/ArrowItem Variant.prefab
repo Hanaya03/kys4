@@ -33,6 +33,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3281099986286528615, guid: 9547d39ad736d42228fd7d13c6b7d7fc, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 3281099986286528615, guid: 9547d39ad736d42228fd7d13c6b7d7fc, type: 3}
       propertyPath: m_Name
       value: ArrowItem Variant
       objectReference: {fileID: 0}
@@ -100,7 +104,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 806908438428332290, guid: 9547d39ad736d42228fd7d13c6b7d7fc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

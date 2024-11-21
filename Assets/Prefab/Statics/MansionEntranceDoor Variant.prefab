@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MansionEntranceDoor Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3042179190480821021, guid: 59b40a3afd4304eb68dda1aa0ca8311b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c1ec0b62f712441d09d3ed8a465e347d, type: 3}
     - target: {fileID: 4077923455280378234, guid: 59b40a3afd4304eb68dda1aa0ca8311b, type: 3}
       propertyPath: interactive
       value: 

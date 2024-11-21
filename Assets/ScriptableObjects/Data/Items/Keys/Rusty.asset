@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: Items/Keys/Rusty
   inspectMessage: []
-  combinations: []
+  combinations:
+  - staticID: Static/LibraryDoor
+    function: 1
+    consumeItem: 1
+    giveID: 
+  prefab: {fileID: 2169524933392756998, guid: 0693c2878ac8e4112abe562d719ac1e9, type: 3}

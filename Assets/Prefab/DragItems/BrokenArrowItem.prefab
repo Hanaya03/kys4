@@ -49,10 +49,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactive: {fileID: 11400000, guid: 76a4e3e5cdacd49c3a9fa1e9dea27f69, type: 2}
+  changer: {fileID: 0}
 --- !u!212 &23193026685357837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -188,7 +189,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef2cd0580dc8cb24b87d6ebfab1623aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62124b1f7423b468d9e63c2a5a19c4bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -13,3 +13,25 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   editorPlay: 1
+  AllScenes:
+  - Assets/Scenes/GameScenes/MeatClosetRestroom.unity
+  - Assets/Scenes/GameScenes/HuntingLodge.unity
+  - Assets/Scenes/GameScenes/MansionEntranceHall.unity
+  - Assets/Scenes/GameScenes/Library.unity
+  - Assets/Scenes/GameScenes/Basement.unity
+  itemScriptObjects:
+  - {fileID: 11400000, guid: 76a4e3e5cdacd49c3a9fa1e9dea27f69, type: 2}
+  - {fileID: 11400000, guid: e12d4a35a9afc40729e8239d97dbe285, type: 2}
+  - {fileID: 11400000, guid: 8f4b119d9124949f3b514d5229589fe2, type: 2}
+  - {fileID: 11400000, guid: 3b701b99fe48640649098dd2ff1474c9, type: 2}
+  - {fileID: 11400000, guid: e840525ca7be749ebb9df235f9e7bb04, type: 2}
+  - {fileID: 11400000, guid: 7d378aa55b24941de8be7c42b13ee179, type: 2}
+  - {fileID: 11400000, guid: 791bd2578f6984befa0b1facb40c9131, type: 2}
+  - {fileID: 11400000, guid: d649773c52cc04906892ec26ac2716ed, type: 2}
+  staticScriptObjects:
+  - {fileID: 11400000, guid: a28f14404b9c14e38a98435cf40e3809, type: 2}
+  - {fileID: 11400000, guid: e854730b3380f4dc29fa33c6a7aab9da, type: 2}
+  - {fileID: 11400000, guid: 36ddbaf3f9aee4d68b65b7429a8be701, type: 2}
+  - {fileID: 11400000, guid: 2942a6adc5ff646a08beb5a1e2edeacc, type: 2}
+  - {fileID: 11400000, guid: 13aa8319d8313482f9287847cb54e116, type: 2}
+  - {fileID: 11400000, guid: 176773698ebc84dda99e0bf12cee9c6e, type: 2}

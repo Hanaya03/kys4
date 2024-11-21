@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e468837fb29476e8a9942443f5b0ee, type: 3}
+  m_Name: GoldState
+  m_EditorClassIdentifier: 
+  Combinations:
+  - ItemID: Items/Keys/Gold
+    EntityID: Static/MainLock
+  background: {fileID: 21300000, guid: 43b12946ae3f648c695c3bf69e7876ba, type: 3}
+  nextScenes:
+  - {fileID: 11400000, guid: bf01873bf952f4b929c230a9516ee8cd, type: 2}
+  - {fileID: 11400000, guid: cc2bd2c9f93234f9eb5fe649cbd13d6d, type: 2}

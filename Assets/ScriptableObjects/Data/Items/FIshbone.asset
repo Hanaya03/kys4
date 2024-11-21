@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad394703c152e4045ae6f4d875382ff6, type: 3}
-  m_Name: FIshbone
+  m_Name: Fishbone
   m_EditorClassIdentifier: 
   guid: Items/Fishbone
   inspectMessage: []
   combinations:
-  - itemID: Static/Door/HuntingLodge
+  - staticID: Static/Door/HuntingLodge
     function: 1
     consumeItem: 1
     giveID: 
+  prefab: {fileID: 2169524933392756998, guid: a916177c8b7e0400e926241dfff0ac7d, type: 3}
