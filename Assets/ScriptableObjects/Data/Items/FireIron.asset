@@ -15,7 +15,8 @@ MonoBehaviour:
   guid: Items/FireIron
   inspectMessage: []
   combinations:
-  - itemID: Static/Fireplace
+  - staticID: Static/Fireplace
     function: 0
     consumeItem: 1
-    giveID: Items/Keys/Iron
+    giveID: Items/Keys/Rusty
+  prefab: {fileID: 0}

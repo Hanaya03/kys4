@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e468837fb29476e8a9942443f5b0ee, type: 3}
+  m_Name: GrayState
+  m_EditorClassIdentifier: 
+  Combinations:
+  - ItemID: Items/Keys/Iron
+    EntityID: Static/MainLock
+  background: {fileID: 21300000, guid: eff9526de0efc4763a88b6ef42260d45, type: 3}
+  nextScenes:
+  - {fileID: 11400000, guid: bf01873bf952f4b929c230a9516ee8cd, type: 2}
+  - {fileID: 11400000, guid: 15d09c258abce439c890a466c50ec379, type: 2}

@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guid: Items/Keys/Iron
   inspectMessage: []
-  combinations: []
+  combinations:
+  - staticID: Static/MainLock
+    function: 2
+    consumeItem: 1
+    giveID: 
+  prefab: {fileID: 2169524933392756998, guid: 5aa76ca681551488d84547508b5f3c75, type: 3}

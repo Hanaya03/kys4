@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using TriInspector;
 using UnityEngine;
+using Interactables;
 using HUD;
 using Interactables;
 
@@ -12,9 +13,8 @@ namespace Interactables.Components
     [HideMonoScript]
     public class Inspectable : MonoBehaviour
     {
-        private Static staticComponent;
-        private Item itemComponent;
-
+        [SerializeField] private Interactives interactable;
+        
         // When the mouse is over the inspectable entity
         public async void OnMouseOver()
         {

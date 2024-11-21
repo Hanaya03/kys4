@@ -15,11 +15,12 @@ MonoBehaviour:
   guid: Items/BrokenArrow
   inspectMessage: []
   combinations:
-  - itemID: Static/FishPile
-    function: 0
+  - staticID: Static/Fish
+    function: 2
     consumeItem: 0
-    giveID: Items/Fishbone
-  - itemID: Static/BooBoo
+    giveID: 
+  - staticID: Static/Booboo
     function: 0
     consumeItem: 1
     giveID: Items/BloodArrow
+  prefab: {fileID: 0}

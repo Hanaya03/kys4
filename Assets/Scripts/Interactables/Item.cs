@@ -1,5 +1,3 @@
-using System;
-using HUD;
 using Interactables.Components;
 using TriInspector;
 using UnityEngine;

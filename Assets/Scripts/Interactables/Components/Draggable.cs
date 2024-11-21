@@ -41,28 +41,35 @@ namespace Interactables.Components
             {
                 var itemInteractive = (ItemData)item.interactive; // Get the ItemData of this inventory item. 
                 // For each combination this inventory item has
-                foreach (var combination in itemInteractive.combinations) 
+                foreach (var combination in itemInteractive.combinations)
                 {
+                    string interactableGUID = interactable.interactive.guid;
                     // If the static entity is not a item-to-static combination, skip
-                    if (!combination.staticID.Equals(interactable.interactive.guid)) continue;
+                    if (!combination.staticID.Equals(interactableGUID)) continue;
                     // If so, run the provided function
                     switch (combination.function)
                     {
-                        // NOTE: Fix GiveItem function
                         case InvItem.CombinationFunctions.GiveItem:
-                            var newItem = new InvItem(combination.giveID);
-                            // newItem.AddItem();
+                            string guid = combination.giveID;
+                            foreach (var itemData in MasterScript.Settings.itemScriptObjects)
+                            {
+                                if (itemData.guid.Equals(guid)) { item.Hud.addToInventory(itemData.prefab); }
+                            }
+                            interactable.changer.NextSceneState(itemInteractive.guid, interactableGUID);
+                            //var newItem = new InvItem(combination.giveID);
+                            //newItem.AddItem();
                             break;
                         case InvItem.CombinationFunctions.EnableInteraction:
-                            interactable.activated = true; break; // Enable the interactable functionality of the static
+                            interactable.changer.NextSceneState(itemInteractive.guid, interactableGUID);
+                            interactable.activated = true; 
+                            break; // Enable the interactable functionality of the static
+                        case InvItem.CombinationFunctions.DeleteStatic:
+                            interactable.changer.NextSceneState(itemInteractive.guid, interactableGUID);
+                            Destroy(_interactObject.gameObject); break;
                         default: throw new ArgumentOutOfRangeException();
                     }
-                    // NOTE: Fix RemoveItem function
-                    if (combination.consumeItem)
-                    {
-                        item.Hud.removeFromInventory();
-                    }
-                    else {} // Move the item back into its permanent position
+                    if (combination.consumeItem) { item.Hud.removeFromInventory(); }
+                    if (combination.consumeStatic) {Destroy(_interactObject.gameObject);}
                     break;
                 }
                 Destroy(gameObject); // Move the item back into its permanent position

@@ -3,6 +3,7 @@ using TriInspector;
 using Interactables.Components;
 using Interactables.Data;
 using HUD;
+using UnityEngine.SceneManagement;
 
 namespace Interactables
 {
@@ -14,6 +15,9 @@ namespace Interactables
     {
         [Tooltip("The Data for this Object: Assets/ScriptableObjects/Data")]
         [SerializeField] public InteractiveData interactive;
+        [Tooltip("The the current background-image script")] 
+        [SerializeField] public BackgroundChanger changer;
+
         public hudManager Hud { private set; get; }
         private GameObject _hudObject;
         
@@ -22,6 +26,7 @@ namespace Interactables
             _hudObject = GameObject.FindWithTag("HUD");
             Hud = _hudObject.GetComponent<hudManager>();
         }
+        
     }
 }
 

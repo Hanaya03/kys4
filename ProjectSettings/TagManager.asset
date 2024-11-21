@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - HUD
+  - AudioPlayer
+  - Initializer
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Item
-  - 
-  - 
+  - HiddenItem
+  - StaticCover
   - 
   - 
   - 
@@ -47,4 +49,7 @@ TagManager:
     locked: 0
   - name: Item
     uniqueID: 1709637923
+    locked: 0
+  - name: Init
+    uniqueID: 1646330639
     locked: 0
