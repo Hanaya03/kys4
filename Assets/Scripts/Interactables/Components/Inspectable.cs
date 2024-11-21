@@ -16,7 +16,7 @@ namespace Interactables.Components
         private Item itemComponent;
 
         // When the mouse is over the inspectable entity
-        public void OnMouseOver()
+        public async void OnMouseOver()
         {
             // If the right-mouse button is down
             if (Input.GetMouseButtonDown(1))
@@ -25,13 +25,18 @@ namespace Interactables.Components
                 if(gameObject.GetComponent<Item>() != null){
                     gameObject.GetComponent<Item>().Hud.invertHudStatus();
                     gameObject.GetComponent<Item>().Hud.changeText(gameObject.GetComponent<Item>().interactive.inspectMessage[0]);
-                    WaitForMouseClick();
+                    await WaitForMouseClick();
+                    gameObject.GetComponent<Item>().Hud.changeText("");
                     gameObject.GetComponent<Item>().Hud.invertHudStatus();
-                }else if(gameObject.GetComponent<Static>() != null){
+                    return;
+                }
+                if(gameObject.GetComponent<Static>() != null){
                     gameObject.GetComponent<Static>().Hud.invertHudStatus();
                     gameObject.GetComponent<Static>().Hud.changeText(gameObject.GetComponent<Static>().interactive.inspectMessage[0]);
-                    WaitForMouseClick();
+                    await WaitForMouseClick();
+                    gameObject.GetComponent<Item>().Hud.changeText("");
                     gameObject.GetComponent<Static>().Hud.invertHudStatus();
+                    return;
                 }
             }
         }
@@ -39,6 +44,8 @@ namespace Interactables.Components
         private async Task WaitForMouseClick()
         {
             // Continue checking until a mouse click is detected
+            Cursor.lockState = CursorLockMode.Locked;
+
             while (!Input.GetMouseButtonDown(0))
             {
                 await Task.Yield(); // Yields control back to the caller until the next frame
@@ -48,6 +55,8 @@ namespace Interactables.Components
             {
                 await Task.Yield();
             }
+            Cursor.lockState = CursorLockMode.None;
+
         }
     }
 }

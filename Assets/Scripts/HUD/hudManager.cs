@@ -14,8 +14,6 @@ namespace HUD
         private int screenWidth = 1920;
         public List<GameObject> itemList = new List<GameObject>();
         private int usingItem;
-        [SerializeField] GameObject arrowObject;
-        [SerializeField] GameObject bloodVialObject;
 
         // Start is called before the first frame update
         void Start()
@@ -33,7 +31,12 @@ namespace HUD
             textObject.transform.SetParent(transform.GetChild(0), false);
             tmpUI = textObject.AddComponent<TextMeshProUGUI>();
 
-            tmpUI.fontSize = 24;
+            Vector3 newTextPos = textObject.transform.position;
+            newTextPos.x = -540;
+            newTextPos.y = 160;
+            textObject.transform.position = newTextPos;
+            
+            tmpUI.fontSize = 48;
         }
     
         // Update is called once per frame
@@ -47,13 +50,6 @@ namespace HUD
             }
             if(Input.GetKeyDown(KeyCode.RightArrow)){
                 shiftInventoryRight();
-            }
-            if(Input.GetKeyDown("space")){
-                if(itemList.Count % 2 == 0){
-                    addToInventory(arrowObject);
-                }else{
-                    addToInventory(bloodVialObject);
-                }
             }
         }
     

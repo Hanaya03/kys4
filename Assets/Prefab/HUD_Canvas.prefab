@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5903292508340653792}
   - component: {fileID: 2595345007859750051}
   - component: {fileID: 1973318420780521124}
-  - component: {fileID: 827381963682974467}
+  - component: {fileID: 7828003677360839138}
   m_Layer: 5
   m_Name: HUD_Canvas
   m_TagString: Untagged
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryHUD: {fileID: 2889739670594463738}
---- !u!114 &827381963682974467
+--- !u!114 &7828003677360839138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,8 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemList: []
-  arrowObject: {fileID: 2169524933392756998, guid: 85f9e806325937b4d8534d98f5d436d0, type: 3}
-  bloodVialObject: {fileID: 8320405255603123415, guid: 5663db301610c8942b933c4b44fa2554, type: 3}
 --- !u!1 &2889739670594463738
 GameObject:
   m_ObjectHideFlags: 0
