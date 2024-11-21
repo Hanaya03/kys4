@@ -10,9 +10,9 @@ namespace HUD
         private int maxItemDisplayCount = 6;
         private int screenWidth = 1920;
         public List<GameObject> itemList = new List<GameObject>();
+        public List<string> itemGUIDList = new List<string>();
         private int usingItem;
-        [SerializeField] GameObject arrowObject;
-        [SerializeField] GameObject bloodVialObject;
+        [SerializeField] private AudioSource audio;
 
         // Start is called before the first frame update
         void Start()
@@ -50,7 +50,9 @@ namespace HUD
         }
     
         public void addToInventory(GameObject toAdd){
+            CollectAudio();
             itemList.Add(toAdd);
+            itemGUIDList.Add(toAdd.GetComponent<InvItemClick>().data.guid);
             if(itemList.Count - 1 < maxItemDisplayCount){
                 GameObject newItem = Instantiate(itemList[itemList.Count - 1], transform.GetChild(0));
                 newItem.transform.position = transform.GetChild(0).GetChild(itemList.Count - 1).position;
@@ -82,6 +84,7 @@ namespace HUD
         {
             int startIndex = usingItem;
             itemList.RemoveAt(usingItem);
+            itemGUIDList.RemoveAt(usingItem);
             if(usingItem >= startingItemDisplayIndex && usingItem < startingItemDisplayIndex + maxItemDisplayCount){
                 for(int x = usingItem - startingItemDisplayIndex + maxItemDisplayCount; 
                     x < usingItem - startingItemDisplayIndex + 2*maxItemDisplayCount && x < itemList.Count + maxItemDisplayCount + 1; x++){
@@ -94,7 +97,7 @@ namespace HUD
                 }
                 for(int x = startIndex; x < startingItemDisplayIndex + maxItemDisplayCount && x < itemList.Count; x++){
                     GameObject newItem = Instantiate(itemList[x], transform.GetChild(0));
-                    newItem.transform.position = transform.GetChild(0).GetChild(x - startIndex).position;
+                    newItem.transform.position = transform.GetChild(0).GetChild(x - startingItemDisplayIndex).position;
                 }
             } 
         }
@@ -130,6 +133,11 @@ namespace HUD
         public void SetUsingItem(int index)
         {
             usingItem = index;
+        }
+
+        public void CollectAudio()
+        {
+            audio.Play();
         }
     }
 }

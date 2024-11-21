@@ -1,5 +1,8 @@
+using System.Collections.Generic;
+using Interactables.Components;
 using UnityEngine;
 using TriInspector;
+using Interactables.Data;
 
 /// <summary>
 /// The game's settings (Currently only the editor's play method)
@@ -12,6 +15,10 @@ public class GameSettings : ScriptableObject
     public EditorPlayMethod editorPlay;
     public const string PersistentScenePath = "Assets/Scenes/PersistentScene.unity";
     public const string StartScenePath = "Assets/Scenes/MenuScenes/MainMenuScene.unity";
+    [Scene] public string[] AllScenes; 
+
+    public List<ItemData> itemScriptObjects;
+    public List<InteractiveData> staticScriptObjects;
     
     /// <summary> Methods of starting the game in the Editor </summary>
     public enum EditorPlayMethod

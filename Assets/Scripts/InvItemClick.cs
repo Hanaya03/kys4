@@ -8,19 +8,18 @@ using TriInspector;
 [HideMonoScript]
 public class InvItemClick : MonoBehaviour, IPointerDownHandler
 {
+    public InteractiveData data;
     public UnityEvent onClick;
     private hudManager _hud;
-    private int index;
 
-    public void Start()
+    private void Awake()
     {
         _hud = GameObject.FindWithTag("HUD").GetComponent<hudManager>();
-        index = _hud.itemList.Count - 1;
     }
     
     public void OnPointerDown(PointerEventData _)
     {
-        _hud.SetUsingItem(index);
+        _hud.SetUsingItem(_hud.itemGUIDList.IndexOf(data.guid));
         onClick.Invoke();
     }
 }

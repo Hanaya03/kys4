@@ -10,6 +10,7 @@ namespace Interactables
     /// Subclass of Interactives, for Static Entities. These entities can be inspected and interacted with. 
     /// </summary>
     [RequireComponent(typeof(Interactable))]
+    [RequireComponent(typeof(AudioSource))]
     [HideMonoScript]
     public class Static : Interactives
     {
@@ -18,33 +19,53 @@ namespace Interactables
 
         /// <summary> Functions that can be ran when interacting with a static entity </summary>
         public enum StaticFunctions
-        { ChangeScene, }
+        { ChangeScene, WinScene, None }
 
         [Tooltip("The function that will be ran when this entity is clicked on.")]
-        public StaticFunctions staticFunction;
+        public StaticFunctions[] staticFunctions;
 
+        [SerializeField] private AudioSource audio;
+
+        void Start()
+        {
+            audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
+        }
+        
         /// <summary> Run the chosen static function for this static object</summary>
         public void RunStaticFunction()
         {
-            if (!activated) return; // If the interactable is deactivated, don't run the function
-            switch (staticFunction)
+            foreach (var staticFunction in staticFunctions)
             {
-                case StaticFunctions.ChangeScene:
-                    ChangeScene(); // Change to the Scene decided by the Static Object's data 
-                    break;
+               if (!activated) return; // If the interactable is deactivated, don't run the function
+               switch (staticFunction)
+               {
+                   case StaticFunctions.ChangeScene:
+                       ChangeScene(); // Change to the Scene decided by the Static Object's data 
+                       break;
+                    case StaticFunctions.WinScene:
+                        WinScene();
+                        break;
+               } 
             }
+            
         }
         
         /// <summary> Go to the scene given by the guid of this object's interactive data, and unload
         /// the current scene. </summary>
-        private void ChangeScene()
+        private async void ChangeScene()
         {
+            audio.Play();
             var room = interactive.guid.Split("Static/Door/")[1];
-            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().path);
-            SceneManager.LoadScene("Assets/Scenes/GameScenes/" + room + ".unity", LoadSceneMode.Additive);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/GameScenes/" + room + ".unity"));
             UniTask.Yield();
         }
         
+        private async void WinScene()
+        {
+            await SceneManager.LoadSceneAsync("Assets/Scenes/MenuScenes/" + "Win" + ".unity");
+            SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/MenuScenes/" + "Win" + ".unity"));
+            UniTask.Yield();
+        }
         
     }
 }

@@ -20,11 +20,12 @@ namespace Interactables.Data
             [Tooltip("Whether the item is consumed after use.")]
             public bool consumeItem;
             [Tooltip("The ID of the item to give after this combination is used, if applicable.")]
-            public string giveID;
+            public string giveID; 
         }
 
         [Tooltip("List of item-to-static combinations available for this item.")]
         [SerializeField] public ItemCombinations[] combinations;
+        [SerializeField] public GameObject prefab;
 
     }
 

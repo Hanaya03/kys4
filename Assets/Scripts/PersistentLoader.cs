@@ -16,24 +16,25 @@ public static class PersistentLoader
     /// at the current scene or the game's start scene. This method runs before the first scene loads.
     /// </summary>
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void LoadPersistentScene()
+    private static async void LoadPersistentScene()
     {
+        MasterScript.Settings = Settings;
 // If playing in the Unity Editor
 #if UNITY_EDITOR 
         if (Settings.editorPlay.Equals(GameSettings.EditorPlayMethod.StartOfGame))
         {
             // Loads the game's starting scene
-            SceneManager.LoadScene(GameSettings.StartScenePath); 
+            SceneManager.LoadSceneAsync(GameSettings.StartScenePath); 
         }
         // Otherwise, keep the current scene
-
 #endif
         // If the persistent scene is not the current scene
         if (SceneManager.GetActiveScene().path != GameSettings.PersistentScenePath)
         {
             // Load it in on top (Additive) of the current scene
-            SceneManager.LoadScene(GameSettings.PersistentScenePath, LoadSceneMode.Additive);
+            await SceneManager.LoadSceneAsync(GameSettings.PersistentScenePath, LoadSceneMode.Additive);
         }
         UniTask.Yield();
+        SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/PersistentScene.unity"));
     }
 }
