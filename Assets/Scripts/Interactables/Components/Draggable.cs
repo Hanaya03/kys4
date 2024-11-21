@@ -69,6 +69,7 @@ namespace Interactables.Components
                         default: throw new ArgumentOutOfRangeException();
                     }
                     if (combination.consumeItem) { item.Hud.removeFromInventory(); }
+                    if (combination.consumeStatic) {Destroy(_interactObject.gameObject);}
                     break;
                 }
                 Destroy(gameObject); // Move the item back into its permanent position

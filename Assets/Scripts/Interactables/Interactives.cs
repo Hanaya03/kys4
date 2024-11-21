@@ -18,7 +18,6 @@ namespace Interactables
         [Tooltip("The the current background-image script")] 
         [SerializeField] public BackgroundChanger changer;
 
-        [Scene] [SerializeField] private string thisScene;
         public hudManager Hud { private set; get; }
         private GameObject _hudObject;
         

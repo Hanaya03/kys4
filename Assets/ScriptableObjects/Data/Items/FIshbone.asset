@@ -18,5 +18,6 @@ MonoBehaviour:
   - staticID: Static/Door/HuntingLodge
     function: 1
     consumeItem: 1
+    consumeStatic: 0
     giveID: 
   prefab: {fileID: 2169524933392756998, guid: a916177c8b7e0400e926241dfff0ac7d, type: 3}

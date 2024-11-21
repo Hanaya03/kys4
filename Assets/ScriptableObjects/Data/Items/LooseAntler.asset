@@ -18,5 +18,6 @@ MonoBehaviour:
   - staticID: Static/BearTrap
     function: 0
     consumeItem: 1
+    consumeStatic: 1
     giveID: Items/Keys/Iron
   prefab: {fileID: 0}
