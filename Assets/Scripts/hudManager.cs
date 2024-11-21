@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using TMPro;
 
 namespace HUD
 {
     public class hudManager : MonoBehaviour
-    {  
+    {
+        private TextMeshProUGUI tmpUI;
+        private  GameObject textObject;
         private int startingItemDisplayIndex;
         private int maxItemDisplayCount = 6;
         private int screenWidth = 1920;
@@ -25,6 +28,11 @@ namespace HUD
                 newPos.y = 160;
                 itemDisplayPostion.transform.position = newPos;
             }
+            textObject = new GameObject("TextMeshProUI");
+            textObject.transform.SetParent(transform.GetChild(0), false);
+            tmpUI = textObject.AddComponent<TextMeshProUGUI>();
+
+            tmpUI.fontSize = 24;
         }
     
         // Update is called once per frame
@@ -129,6 +137,11 @@ namespace HUD
         public void SetUsingItem(int index)
         {
             usingItem = index;
+        }
+
+        public void changeText(string newText)
+        {
+            tmpUI.text = newText;
         }
     }
 }
