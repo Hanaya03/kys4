@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: FIshbone
   m_EditorClassIdentifier: 
   guid: Items/Fishbone
-  inspectMessage: []
+  inspectMessage:
+  - It's a fish bone. I wonder if I can put this in anything.
   combinations:
-  - itemID: Static/Door/HuntingLodge
+  - staticID: 
     function: 1
     consumeItem: 1
     giveID: 
