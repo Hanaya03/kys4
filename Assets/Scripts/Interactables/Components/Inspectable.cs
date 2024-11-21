@@ -13,7 +13,7 @@ namespace Interactables.Components
     [HideMonoScript]
     public class Inspectable : MonoBehaviour
     {
-        [SerializeField] private Interactives interactable;
+        // [SerializeField] private Interactives interactable;
         
         // When the mouse is over the inspectable entity
         public async void OnMouseOver()

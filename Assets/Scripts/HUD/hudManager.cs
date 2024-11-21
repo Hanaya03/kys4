@@ -56,6 +56,7 @@ namespace HUD
         }
     
         public void addToInventory(GameObject toAdd){
+            Debug.Log("Adding item!");
             CollectAudio();
             itemList.Add(toAdd);
             itemGUIDList.Add(toAdd.GetComponent<InvItemClick>().data.guid);
