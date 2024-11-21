@@ -174,7 +174,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishboneItem
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4000749262994917033, guid: e1c313fe17bcf4864862f4e68b20fd00, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

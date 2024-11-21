@@ -32,8 +32,8 @@ namespace HUD
             tmpUI = textObject.AddComponent<TextMeshProUGUI>();
 
             Vector3 newTextPos = textObject.transform.position;
-            newTextPos.x = -540;
-            newTextPos.y = 160;
+            newTextPos.x = 100;
+            newTextPos.y = 200;
             textObject.transform.position = newTextPos;
             
             tmpUI.fontSize = 48;
@@ -139,6 +139,20 @@ namespace HUD
         public void changeText(string newText)
         {
             tmpUI.text = newText;
+        }
+
+        public void hideItems(){
+            transform.GetChild(0).GetChild(6).gameObject.SetActive(true);
+            for(int x = 7; x < transform.GetChild(0).childCount; x++){
+                transform.GetChild(0).GetChild(x).gameObject.SetActive(false);
+            }
+        }
+
+        public void showItems(){
+            transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+            for(int x = 7; x < transform.GetChild(0).childCount; x++){
+                transform.GetChild(0).GetChild(x).gameObject.SetActive(true);
+            }
         }
     }
 }

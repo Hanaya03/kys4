@@ -25,16 +25,18 @@ namespace Interactables.Components
                 if(gameObject.GetComponent<Item>() != null){
                     gameObject.GetComponent<Item>().Hud.invertHudStatus();
                     gameObject.GetComponent<Item>().Hud.changeText(gameObject.GetComponent<Item>().interactive.inspectMessage[0]);
+                    gameObject.GetComponent<Item>().Hud.hideItems();
                     await WaitForMouseClick();
-                    gameObject.GetComponent<Item>().Hud.changeText("");
+                    gameObject.GetComponent<Item>().Hud.showItems();
                     gameObject.GetComponent<Item>().Hud.invertHudStatus();
                     return;
                 }
                 if(gameObject.GetComponent<Static>() != null){
                     gameObject.GetComponent<Static>().Hud.invertHudStatus();
                     gameObject.GetComponent<Static>().Hud.changeText(gameObject.GetComponent<Static>().interactive.inspectMessage[0]);
+                    gameObject.GetComponent<Static>().Hud.hideItems();
                     await WaitForMouseClick();
-                    gameObject.GetComponent<Item>().Hud.changeText("");
+                    gameObject.GetComponent<Static>().Hud.showItems();
                     gameObject.GetComponent<Static>().Hud.invertHudStatus();
                     return;
                 }
@@ -43,7 +45,6 @@ namespace Interactables.Components
 
         private async Task WaitForMouseClick()
         {
-            // Continue checking until a mouse click is detected
             Cursor.lockState = CursorLockMode.Locked;
 
             while (!Input.GetMouseButtonDown(0))
