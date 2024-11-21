@@ -14,7 +14,7 @@ public class GameSettings : ScriptableObject
     /// <summary> The scene to begin with when playing in the Editor. </summary>
     public EditorPlayMethod editorPlay;
     public const string PersistentScenePath = "Assets/Scenes/PersistentScene.unity";
-    public const string StartScenePath = "Assets/Scenes/MenuScenes/MainMenuScene.unity";
+    public const string StartScenePath = "Assets/Scenes/MenuScenes/MainMenu.unity";
     [Scene] public string[] AllScenes; 
 
     public List<ItemData> itemScriptObjects;

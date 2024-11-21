@@ -16,6 +16,14 @@ public class Initializer : MonoBehaviour
     {
         // Loads the Game's Settings from the ScriptableObject in Assets/Resources
         MasterScript.Settings = Resources.Load<GameSettings>("GameSettings");
+        if (MasterScript.Settings.editorPlay == GameSettings.EditorPlayMethod.CurrentScene)
+        {
+            await SetScenes();
+        }
+    }
+
+    public async UniTask SetScenes()
+    {
         foreach (var scene in MasterScript.Settings.AllScenes)
         {
             if (SceneManager.GetSceneByPath(scene).isLoaded)
