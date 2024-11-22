@@ -15,13 +15,16 @@ namespace Interactables.Components
         [SerializeField] protected Item item;
         
         // When the mouse clicks, invoke the event for adding items. 
-        void OnMouseDown()
+        void OnMouseUp()
         {
             Debug.Log("Mouse Input! " + gameObject.name);
             Debug.Log(HUD.inputManager.IsInputLocked);
             if(!HUD.inputManager.IsInputLocked){
                 if(item.changer) item.changer.NextSceneState(item.interactive.guid,"");
                 item.Hud.addToInventory(item.itemObject);
+
+                item.Hud.displayText(item.interactive.inspectMessage[1]);
+
                 Destroy(gameObject);
             }
         }

@@ -36,6 +36,7 @@ public class Initializer : MonoBehaviour
             await SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
             await UniTask.Yield();
         }
-        await UniTask.WaitUntil(() => SceneManager.SetActiveScene(SceneManager.GetSceneByPath(activeScene)));
+        if(activeScene != null)
+            await UniTask.WaitUntil(() => SceneManager.SetActiveScene(SceneManager.GetSceneByPath(activeScene)));
     }
 }

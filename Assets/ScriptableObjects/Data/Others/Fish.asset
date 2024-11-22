@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Fish
   m_EditorClassIdentifier: 
   guid: Static/Fish
-  inspectMessage: []
+  inspectMessage:
+  - Why is there just a fish here?

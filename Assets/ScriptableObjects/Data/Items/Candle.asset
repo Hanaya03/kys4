@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Candle
   m_EditorClassIdentifier: 
   guid: Items/Candle
-  inspectMessage: []
+  inspectMessage:
+  - The candle emits a strange glow.
+  - A good and portable light source. It'll prove handy.
   combinations: []
   prefab: {fileID: 2169524933392756998, guid: bf0b9f7f8f6eb4690b09706c24500fcb, type: 3}
   audio: {fileID: 0}

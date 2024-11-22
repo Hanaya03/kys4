@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Note
   m_EditorClassIdentifier: 
   guid: Items/Note
-  inspectMessage: []
+  inspectMessage:
+  - a note
+  - You rifle through the pages of the book. Eventually you come upon a page with
+    a note. A quick skim through the note reveals a 3 digit code.
   combinations: []
   prefab: {fileID: 2169524933392756998, guid: 8995a838561064fec97692452fe8547f, type: 3}
   audio: {fileID: 0}

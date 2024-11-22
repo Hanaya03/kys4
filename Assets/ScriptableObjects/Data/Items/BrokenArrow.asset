@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: BrokenArrow
   m_EditorClassIdentifier: 
   guid: Items/BrokenArrow
-  inspectMessage: []
+  inspectMessage:
+  - An arrow sticks out of a fresh dear corpse. I think I can pull it out.
+  - 'Shiny steel fights through a thin layer of rust on the arrowhead, revealing
+    an edge sharp enough for one final use. '
+  - "I grip the fish on one hand and tightly pinch my index and thumb on the wooden
+    stem of the arrow, I gradually slice open the fish revealing a mess of guts and
+    an array of bones resembling prison bars. The thin bones catch my eyes\u2026"
   combinations:
   - staticID: Static/Fish
     function: 2

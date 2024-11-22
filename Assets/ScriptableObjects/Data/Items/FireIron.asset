@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: FireIron
   m_EditorClassIdentifier: 
   guid: Items/FireIron
-  inspectMessage: []
+  inspectMessage:
+  - 'Staring down the long rod, I see the pointed end of a hook facing me. It is
+    stained with snowy white ash. It was likely used to shuffle around dying clumps
+    of hot charcoal. '
+  - A heavy, steel spear like rod.
   combinations:
   - staticID: Static/Fireplace
     function: 0
