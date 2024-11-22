@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242fb1f40d00444dda30e5d47cb5596a, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  editorPlay: 0
+  editorPlay: 1
   AllScenes:
   - Assets/Scenes/GameScenes/MeatClosetRestroom.unity
   - Assets/Scenes/GameScenes/HuntingLodge.unity

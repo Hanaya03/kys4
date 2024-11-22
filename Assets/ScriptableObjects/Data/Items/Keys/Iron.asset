@@ -18,5 +18,7 @@ MonoBehaviour:
   - staticID: Static/MainLock
     function: 2
     consumeItem: 1
+    consumeStatic: 0
     giveID: 
   prefab: {fileID: 2169524933392756998, guid: 5aa76ca681551488d84547508b5f3c75, type: 3}
+  audio: {fileID: 8300000, guid: de135a3532dc840b39f01978b1506c3b, type: 3}

@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad394703c152e4045ae6f4d875382ff6, type: 3}
-  m_Name: Rusty
+  m_Name: Candle
   m_EditorClassIdentifier: 
-  guid: Items/Keys/Rusty
+  guid: Items/Candle
   inspectMessage: []
-  combinations:
-  - staticID: Static/Door/Library
-    function: 1
-    consumeItem: 1
-    consumeStatic: 0
-    giveID: 
-  prefab: {fileID: 2169524933392756998, guid: 0693c2878ac8e4112abe562d719ac1e9, type: 3}
-  audio: {fileID: 8300000, guid: de135a3532dc840b39f01978b1506c3b, type: 3}
+  combinations: []
+  prefab: {fileID: 2169524933392756998, guid: bf0b9f7f8f6eb4690b09706c24500fcb, type: 3}
+  audio: {fileID: 0}

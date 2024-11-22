@@ -16,7 +16,7 @@ namespace Interactables
     {
         [Tooltip("Whether this interactive is enabled and can be clicked on.")]
         public bool activated;
-
+        
         /// <summary> Functions that can be ran when interacting with a static entity </summary>
         public enum StaticFunctions
         { ChangeScene, WinScene, None }
@@ -54,6 +54,7 @@ namespace Interactables
         /// the current scene. </summary>
         private async void ChangeScene()
         {
+            
             audio.Play();
             var room = interactive.guid.Split("Static/Door/")[1];
             SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/GameScenes/" + room + ".unity"));
@@ -65,6 +66,11 @@ namespace Interactables
             await SceneManager.LoadSceneAsync("Assets/Scenes/MenuScenes/" + "Win" + ".unity");
             SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/MenuScenes/" + "Win" + ".unity"));
             UniTask.Yield();
+        }
+
+        public void PlayAudio(AudioClip clip)
+        {
+            audio.PlayOneShot(clip);
         }
         
     }
