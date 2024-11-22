@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88e468837fb29476e8a9942443f5b0ee, type: 3}
-  m_Name: BPipes&Candles
+  m_Name: LTakeKey
   m_EditorClassIdentifier: 
   Combinations:
-  - ItemID: Items/Candle
+  - ItemID: Items/Keys/Gold
     EntityID: 
-  background: {fileID: 21300000, guid: 410af5a89e04a47d495635405383910d, type: 3}
+  background: {fileID: 21300000, guid: c09b32205bf10e546b11c3f8013a1431, type: 3}
   nextScenes:
-  - {fileID: 11400000, guid: c98b53b0d949245bdbb21d71381b5bcc, type: 2}
+  - {fileID: 0}
