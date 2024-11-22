@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using Interactables;
 using UnityEngine;
 using TMPro;
 
@@ -153,6 +154,35 @@ namespace HUD
         public void CollectAudio()
         {
             audio.Play();
+        }
+
+        public async void Inspect(Interactives interactive)
+        {
+            if(interactive != null){
+                invertHudStatus();
+                changeText(interactive.interactive.inspectMessage[0]);
+                hideItems();
+                await WaitForMouseClick();
+                showItems();
+                invertHudStatus();
+            }
+        }
+        
+        private async UniTask WaitForMouseClick()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+
+            while (!Input.GetMouseButtonDown(0))
+            {
+                await UniTask.Yield(); // Yields control back to the caller until the next frame
+            }
+            // Wait until the mouse button is released to prevent accidental skips
+            while (Input.GetMouseButton(0))
+            {
+                await UniTask.Yield();
+            }
+            Cursor.lockState = CursorLockMode.None;
+
         }
         
         public void changeText(string newText)

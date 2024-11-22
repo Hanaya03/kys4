@@ -17,8 +17,13 @@ MonoBehaviour:
   combinations:
   - staticID: Static/Fireplace
     function: 0
-    consumeItem: 1
+    consumeItem: 0
     consumeStatic: 0
     giveID: Items/Keys/Rusty
+  - staticID: Static/WallHole
+    function: 2
+    consumeItem: 0
+    consumeStatic: 0
+    giveID: 
   prefab: {fileID: 2169524933392756998, guid: cc699130be95e4df18042c282bff5da5, type: 3}
   audio: {fileID: 0}

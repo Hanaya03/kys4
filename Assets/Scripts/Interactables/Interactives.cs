@@ -9,7 +9,6 @@ namespace Interactables
 {
     /// <summary> Parent class, interactives are entities in the scene that can be inspected and "interacted"
     /// with in some way</summary>
-    [RequireComponent(typeof(Inspectable))] // Ensure the "Inspectable" script is present in this GameObject
     [HideMonoScript]
     public class Interactives : MonoBehaviour
     {
@@ -20,11 +19,18 @@ namespace Interactables
 
         public hudManager Hud { private set; get; }
         private GameObject _hudObject;
+        [SerializeField] protected AudioSource audio;
         
-        private void Start()
+        protected void Start()
         {
             _hudObject = GameObject.FindWithTag("HUD");
             Hud = _hudObject.GetComponent<hudManager>();
+            audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
+        }
+        
+        public void PlayAudio(AudioClip clip)
+        {
+            audio.PlayOneShot(clip);
         }
         
     }

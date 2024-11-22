@@ -19,17 +19,10 @@ namespace Interactables
         
         /// <summary> Functions that can be ran when interacting with a static entity </summary>
         public enum StaticFunctions
-        { ChangeScene, WinScene, None }
+        { ChangeScene, WinScene, DeleteStatic, ShowSprite, None }
 
         [Tooltip("The function that will be ran when this entity is clicked on.")]
         public StaticFunctions[] staticFunctions;
-
-        [SerializeField] private AudioSource audio;
-
-        void Start()
-        {
-            audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
-        }
         
         /// <summary> Run the chosen static function for this static object</summary>
         public void RunStaticFunction()
@@ -44,6 +37,12 @@ namespace Interactables
                        break;
                     case StaticFunctions.WinScene:
                         WinScene();
+                        break;
+                    case StaticFunctions.DeleteStatic:
+                        Destroy(gameObject);
+                        break;
+                    case StaticFunctions.ShowSprite:
+                        GetComponent<SpriteRenderer>().enabled = true;
                         break;
                } 
             }
@@ -66,11 +65,6 @@ namespace Interactables
             await SceneManager.LoadSceneAsync("Assets/Scenes/MenuScenes/" + "Win" + ".unity");
             SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/MenuScenes/" + "Win" + ".unity"));
             UniTask.Yield();
-        }
-
-        public void PlayAudio(AudioClip clip)
-        {
-            audio.PlayOneShot(clip);
         }
         
     }

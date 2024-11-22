@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad394703c152e4045ae6f4d875382ff6, type: 3}
+  m_Name: Note
+  m_EditorClassIdentifier: 
+  guid: Items/Note
+  inspectMessage: []
+  combinations:
+  - staticID: Static/Safe
+    function: 2
+    consumeItem: 0
+    consumeStatic: 0
+    giveID: 
+  prefab: {fileID: 2169524933392756998, guid: 8995a838561064fec97692452fe8547f, type: 3}
+  audio:
+  - {fileID: 8300000, guid: 77b5aec571c884a32b8a705b4d6c981e, type: 3}
+  - {fileID: 8300000, guid: 36976847c1b514a9cbd380bc6eb6ea44, type: 3}

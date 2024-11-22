@@ -15,5 +15,6 @@ MonoBehaviour:
   Combinations:
   - ItemID: Items/Candle
     EntityID: 
-  background: {fileID: 21300000, guid: ca320628d009e42c5963ad3eed5d1176, type: 3}
-  nextScenes: []
+  background: {fileID: 21300000, guid: 410af5a89e04a47d495635405383910d, type: 3}
+  nextScenes:
+  - {fileID: 11400000, guid: c98b53b0d949245bdbb21d71381b5bcc, type: 2}
