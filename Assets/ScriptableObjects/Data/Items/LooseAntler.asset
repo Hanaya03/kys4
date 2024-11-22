@@ -20,4 +20,5 @@ MonoBehaviour:
     consumeItem: 1
     consumeStatic: 1
     giveID: Items/Keys/Iron
-  prefab: {fileID: 0}
+  prefab: {fileID: 2169524933392756998, guid: 371f829a9d946449c91bf9cec38e2ed5, type: 3}
+  audio: {fileID: 0}
