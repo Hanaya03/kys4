@@ -226,7 +226,7 @@ namespace HUD
             inputManager.LockInput();
             lockKeyboard();
             transform.GetChild(0).gameObject.SetActive(true);
-            transform.GetChild(1).gameObject.SetActive(false);
+            // transform.GetChild(1).gameObject.SetActive(false);
             TextMeshProUGUI textComponent = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
             textComponent.text = "You're an FBI agent investigating a missing child last seen near an isolated Oregon woodland residence. Heavy rain pounds against the trees, and weather forecasts warn of flooding within hours. As part of the investigation, you begin by quickly scanning the outer perimeter of the suspected residence for signs of a break-in or property damage. If the home appears vacant, you’ll proceed to investigate inside.";
             await WaitForMouseClick();
