@@ -19,7 +19,7 @@ namespace Interactables
         
         /// <summary> Functions that can be ran when interacting with a static entity </summary>
         public enum StaticFunctions
-        { ChangeScene, WinScene, None }
+        { ChangeScene, WinScene, DeleteStatic, ShowSprite, None }
 
         [Tooltip("The function that will be ran when this entity is clicked on.")]
         public StaticFunctions[] staticFunctions;
@@ -44,6 +44,12 @@ namespace Interactables
                        break;
                     case StaticFunctions.WinScene:
                         WinScene();
+                        break;
+                    case StaticFunctions.DeleteStatic:
+                        Destroy(gameObject);
+                        break;
+                    case StaticFunctions.ShowSprite:
+                        GetComponent<SpriteRenderer>().enabled = true;
                         break;
                } 
             }
