@@ -9,7 +9,7 @@ namespace Interactables.Components
     /// valid objects.
     /// </summary>
     [HideMonoScript]
-    public class Interactable : MonoBehaviour
+    public class Interactable : Inspectable
     {
         [Tooltip("Event to invoke when clicking on the interactable object")]
         public UnityEvent onInteract;

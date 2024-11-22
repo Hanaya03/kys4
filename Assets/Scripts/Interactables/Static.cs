@@ -28,6 +28,7 @@ namespace Interactables
 
         void Start()
         {
+            base.Start();
             audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
         }
         

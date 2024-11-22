@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03dc3a6c4c0649218ed6c6dfd5c7466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 4077923455280378234}
   onInteract:
     m_PersistentCalls:
       m_Calls:
