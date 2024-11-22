@@ -22,6 +22,7 @@ namespace Interactables.Components
             if (Input.GetMouseButtonDown(1))
             {
                 Debug.Log("M2 input!");
+                HUD.inputManager.LockInput();
                 if(gameObject.GetComponent<Item>() != null){
                     gameObject.GetComponent<Item>().Hud.invertHudStatus();
                     gameObject.GetComponent<Item>().Hud.changeText(gameObject.GetComponent<Item>().interactive.inspectMessage[0]);
@@ -39,7 +40,7 @@ namespace Interactables.Components
                     gameObject.GetComponent<Static>().Hud.showItems();
                     gameObject.GetComponent<Static>().Hud.invertHudStatus();
                     return;
-                }
+                }   
             }
         }
 
@@ -57,7 +58,7 @@ namespace Interactables.Components
                 await Task.Yield();
             }
             Cursor.lockState = CursorLockMode.None;
-
+            HUD.inputManager.UnlockInput();
         }
     }
 }

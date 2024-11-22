@@ -17,10 +17,13 @@ namespace Interactables.Components
         // When the mouse clicks, invoke the event for adding items. 
         void OnMouseDown()
         {
-            Debug.Log("Adding item! " + gameObject.name);
-            if(item.changer) item.changer.NextSceneState(item.interactive.guid,"");
-            item.Hud.addToInventory(item.itemObject);
-            Destroy(gameObject);
+            Debug.Log("Mouse Input! " + gameObject.name);
+            Debug.Log(HUD.inputManager.IsInputLocked);
+            if(!HUD.inputManager.IsInputLocked){
+                if(item.changer) item.changer.NextSceneState(item.interactive.guid,"");
+                item.Hud.addToInventory(item.itemObject);
+                Destroy(gameObject);
+            }
         }
     }
 }

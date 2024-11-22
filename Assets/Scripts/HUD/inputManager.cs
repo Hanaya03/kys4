@@ -4,22 +4,19 @@ using UnityEngine;
 
 namespace HUD
 {
-   public class inputManager : MonoBehaviour
+   public static class inputManager
    {
-       [SerializeField] GameObject inventoryHUD;
-       // Start is called before the first frame update
-       void Start()
-       {
-           
-       }
-   
-       // Update is called once per frame
-       void Update()
-       {
-           if(Input.GetKeyDown("tab")){
-               inventoryHUD.SetActive(!inventoryHUD.activeSelf);
-           }
-       }
+        public static bool IsInputLocked { get; private set; }
+
+        public static void LockInput()
+        {
+            IsInputLocked = true;
+        }
+
+        public static void UnlockInput()
+        {
+            IsInputLocked = false;
+        }
    } 
 }
 

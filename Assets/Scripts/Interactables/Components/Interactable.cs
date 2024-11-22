@@ -17,7 +17,8 @@ namespace Interactables.Components
         // When the mouse is clicked, invoke the onInteract event
         public void OnMouseDown()
         {
-            onInteract.Invoke();
+            if(!HUD.inputManager.IsInputLocked)
+                onInteract.Invoke();
         }
     }
 }
