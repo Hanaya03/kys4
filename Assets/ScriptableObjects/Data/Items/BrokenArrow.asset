@@ -18,9 +18,12 @@ MonoBehaviour:
   - staticID: Static/Fish
     function: 2
     consumeItem: 0
+    consumeStatic: 0
     giveID: 
   - staticID: Static/Booboo
     function: 0
     consumeItem: 1
+    consumeStatic: 0
     giveID: Items/BloodArrow
-  prefab: {fileID: 0}
+  prefab: {fileID: 2169524933392756998, guid: 85f9e806325937b4d8534d98f5d436d0, type: 3}
+  audio: {fileID: 0}

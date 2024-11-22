@@ -22,3 +22,4 @@ MonoBehaviour:
     consumeStatic: 0
     giveID: 
   prefab: {fileID: 2169524933392756998, guid: a916177c8b7e0400e926241dfff0ac7d, type: 3}
+  audio: {fileID: 8300000, guid: de135a3532dc840b39f01978b1506c3b, type: 3}

@@ -18,5 +18,7 @@ MonoBehaviour:
   - staticID: Static/Fireplace
     function: 0
     consumeItem: 1
+    consumeStatic: 0
     giveID: Items/Keys/Rusty
-  prefab: {fileID: 0}
+  prefab: {fileID: 2169524933392756998, guid: cc699130be95e4df18042c282bff5da5, type: 3}
+  audio: {fileID: 0}
