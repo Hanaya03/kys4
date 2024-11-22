@@ -309,6 +309,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 566460805}
+  colScript: {fileID: 566460815}
+--- !u!114 &566460815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1460269681941337248, guid: 9547d39ad736d42228fd7d13c6b7d7fc, type: 3}
+  m_PrefabInstance: {fileID: 654894392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566460804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622cf911209cd49e3a842ec4d91a4d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &654894392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,6 +333,10 @@ PrefabInstance:
       propertyPath: item
       value: 
       objectReference: {fileID: 566460808}
+    - target: {fileID: 1460269681941337248, guid: 9547d39ad736d42228fd7d13c6b7d7fc, type: 3}
+      propertyPath: isActivated
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3281099986286528615, guid: 9547d39ad736d42228fd7d13c6b7d7fc, type: 3}
       propertyPath: m_Icon
       value: 
@@ -333,6 +349,10 @@ PrefabInstance:
       propertyPath: changer
       value: 
       objectReference: {fileID: 1315368219}
+    - target: {fileID: 5990634779866176391, guid: 9547d39ad736d42228fd7d13c6b7d7fc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5990634779866176391, guid: 9547d39ad736d42228fd7d13c6b7d7fc, type: 3}
       propertyPath: itemObject
       value: 
@@ -847,7 +867,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1749785618}
   - component: {fileID: 1749785617}
-  - component: {fileID: 1749785619}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -921,14 +940,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1245813719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1749785619
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749785616}
-  m_Enabled: 1
 --- !u!1001 &2047759698
 PrefabInstance:
   m_ObjectHideFlags: 0

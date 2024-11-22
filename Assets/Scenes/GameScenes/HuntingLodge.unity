@@ -1123,6 +1123,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3042179190480821021, guid: 59b40a3afd4304eb68dda1aa0ca8311b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 668bc9dbe2b564a8f97930232adf9c9f, type: 3}
+    - target: {fileID: 4077923455280378234, guid: 59b40a3afd4304eb68dda1aa0ca8311b, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4077923455280378234, guid: 59b40a3afd4304eb68dda1aa0ca8311b, type: 3}
       propertyPath: changer
       value: 
@@ -1502,7 +1510,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1817050406}
   - component: {fileID: 1817050403}
-  - component: {fileID: 1817050407}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1576,14 +1583,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2100614477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1817050407
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817050402}
-  m_Enabled: 1
 --- !u!1 &1866819220
 GameObject:
   m_ObjectHideFlags: 0

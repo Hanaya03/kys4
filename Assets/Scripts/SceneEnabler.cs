@@ -15,6 +15,11 @@ public class SceneEnabler : MonoBehaviour
         SceneManager.activeSceneChanged += HandleSceneChange;
     }
 
+    void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= HandleSceneChange;
+    }
+
     private void HandleSceneChange(Scene scene1, Scene scene2)
     {
         scene.SetActive(scene2.path == thisScene);

@@ -13,10 +13,13 @@ namespace Interactables.Components
 
         [Tooltip("The Item Script in this Game Object")]
         [SerializeField] protected Item item;
+
+        public bool isActivated = true;
         
         // When the mouse clicks, invoke the event for adding items. 
         void OnMouseUp()
         {
+            if (!isActivated) return;
             Debug.Log("Mouse Input! " + gameObject.name);
             Debug.Log(HUD.inputManager.IsInputLocked);
             if(!HUD.inputManager.IsInputLocked){

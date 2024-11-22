@@ -18,7 +18,10 @@ public class Initializer : MonoBehaviour
         MasterScript.Settings = Resources.Load<GameSettings>("GameSettings");
         if (MasterScript.Settings.editorPlay == GameSettings.EditorPlayMethod.CurrentScene)
         {
-            await SetScenes();
+            if (MasterScript.Settings.loadGameScenes)
+            {
+                await SetScenes();
+            }
         }
     }
 
@@ -36,7 +39,22 @@ public class Initializer : MonoBehaviour
             await SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
             await UniTask.Yield();
         }
-        if(activeScene != null)
+
+        if (activeScene != null)
+        {
             await UniTask.WaitUntil(() => SceneManager.SetActiveScene(SceneManager.GetSceneByPath(activeScene)));
+        }
+    }
+    
+    public async UniTask UnloadScenes()
+    {
+        foreach (var scene in MasterScript.Settings.AllScenes)
+        {
+            if (SceneManager.GetSceneByPath(scene).isLoaded)
+            {
+                await SceneManager.UnloadSceneAsync(scene);
+            }
+            await UniTask.Yield();
+        }
     }
 }

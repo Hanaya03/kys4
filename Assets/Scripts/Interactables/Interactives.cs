@@ -25,7 +25,10 @@ namespace Interactables
         {
             _hudObject = GameObject.FindWithTag("HUD");
             Hud = _hudObject.GetComponent<hudManager>();
-            audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
+            if (!audio)
+            {
+                audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
+            }
         }
         
         public void PlayAudio(AudioClip clip)

@@ -72,8 +72,11 @@ namespace Interactables
         
         private async void WinScene()
         {
+            audio.Play();
+            await UniTask.WaitUntil(() => !audio.isPlaying);
             await SceneManager.LoadSceneAsync("Assets/Scenes/MenuScenes/" + "Win" + ".unity");
             SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/MenuScenes/" + "Win" + ".unity"));
+            SceneManager.LoadSceneAsync("Assets/Scenes/" + "PersistentScene" + ".unity", LoadSceneMode.Additive);
             UniTask.Yield();
         }
         

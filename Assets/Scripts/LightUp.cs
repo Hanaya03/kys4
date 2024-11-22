@@ -1,23 +1,27 @@
 using System;
 using Cysharp.Threading.Tasks;
 using Interactables;
+using Interactables.Components;
 using UnityEngine;
 
 public class LightUp : MonoBehaviour
 {
     private float alphaLevel;
     [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private Collectable colScript;
 
     public async void OnTriggerEnter2D(Collider2D col)
     {
         if (!col.TryGetComponent(out InvItem script)) return;
         if (script.interactive.guid != "Items/Candle") return;
         float distance = 0;
-        while (col && distance < 2)
+        while (col && distance < 2.5)
         {
             distance = Vector2.Distance(transform.position, col.transform.position);
             if (distance < 0.5) { alphaLevel = 255/255f; }
-            else if (distance < 1) { alphaLevel = 155/255f; }
+            else if (distance < 1) { alphaLevel = 155/255f;
+                colScript.isActivated = true;
+            }
             else if (distance < 1.5) { alphaLevel = 25/255f; }
             else { alphaLevel = 5/255f; }
             await UniTask.Yield();
