@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HUD
 {
-   public static class inputManager
+   public class inputManager
    {
         public static bool IsInputLocked { get; private set; }
 
