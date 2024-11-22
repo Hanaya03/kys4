@@ -28,9 +28,11 @@ public class Initializer : MonoBehaviour
         {
             if (SceneManager.GetSceneByPath(scene).isLoaded)
             {
+                Debug.Log(scene + " is loaded");
                 activeScene = scene;
                 continue;
             }
+            Debug.Log(scene + " not loaded");
             await SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
             await UniTask.Yield();
         }

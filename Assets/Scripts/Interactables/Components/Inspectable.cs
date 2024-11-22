@@ -13,7 +13,7 @@ namespace Interactables.Components
     [HideMonoScript]
     public class Inspectable : MonoBehaviour
     {
-        // [SerializeField] private Interactives interactable;
+        [SerializeField] protected Interactives interactable;
         
         // When the mouse is over the inspectable entity
         public async void OnMouseOver()
@@ -22,6 +22,7 @@ namespace Interactables.Components
             if (Input.GetMouseButtonDown(1))
             {
                 Debug.Log("M2 input!");
+<<<<<<< HEAD
                 HUD.inputManager.LockInput();
                 if(gameObject.GetComponent<Item>() != null){
                     gameObject.GetComponent<Item>().Hud.invertHudStatus();
@@ -60,6 +61,12 @@ namespace Interactables.Components
             Cursor.lockState = CursorLockMode.None;
             HUD.inputManager.UnlockInput();
         }
+=======
+                if (interactable.interactive.inspectMessage.Length <= 0) return;
+                interactable.Hud.Inspect(interactable);
+            }
+        }
+>>>>>>> Last-Puzzles-Implementation
     }
 }
 
