@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: Green
   m_EditorClassIdentifier: 
   guid: Items/Keys/Green
-  inspectMessage: []
+  inspectMessage:
+  - 1
+  - 'One pipe is offset with another. I bend it towards my direction and stare into
+    it. Its pitch black. Nothing. I look into the other pipe. A key. I reach my hand
+    inside the moist and slimy pipe and grab the key. '
+  - Who would've thunk it. The green key unlocks the lock that's colored green.
+  - 4
+  - 5
   combinations:
   - staticID: Static/MainLock
     function: 2

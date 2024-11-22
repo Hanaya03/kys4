@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Note
   m_EditorClassIdentifier: 
   guid: Items/Note
-  inspectMessage: []
+  inspectMessage:
+  - 1
+  - 2
+  - 'I rotate the dial of the combination lock to the numbers I read on the note
+    and... voila. It opens to reveal a golden key. '
+  - 4
+  - 5
   combinations:
   - staticID: Static/Safe
     function: 2
