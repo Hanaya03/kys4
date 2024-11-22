@@ -14,6 +14,7 @@ public class SceneChanger : MonoBehaviour
     private async void Start()
     {
         await UniTask.WaitUntil(() => SceneManager.GetSceneByPath("Assets/Scenes/PersistentScene.unity").isLoaded);
+        _hud = GameObject.FindWithTag("HUD").GetComponent<hudManager>();
         _initializer = GameObject.FindWithTag("Initializer").GetComponent<Initializer>();
     }
 
