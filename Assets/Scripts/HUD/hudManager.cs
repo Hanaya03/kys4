@@ -93,8 +93,8 @@ namespace HUD
             itemList.RemoveAt(usingItem);
             itemGUIDList.RemoveAt(usingItem);
             if(usingItem >= startingItemDisplayIndex && usingItem < startingItemDisplayIndex + maxItemDisplayCount){
-                for(int x = usingItem - startingItemDisplayIndex + maxItemDisplayCount; 
-                    x < usingItem - startingItemDisplayIndex + 2*maxItemDisplayCount && x < itemList.Count + maxItemDisplayCount + 1; x++){
+                for(int x = usingItem - startingItemDisplayIndex + maxItemDisplayCount + 1; 
+                    x < usingItem - startingItemDisplayIndex + 2*maxItemDisplayCount && x < itemList.Count + maxItemDisplayCount + 2; x++){
                     Destroy(transform.GetChild(0).GetChild(x).gameObject);
                 }
                 if (startingItemDisplayIndex + maxItemDisplayCount == itemList.Count + 1)

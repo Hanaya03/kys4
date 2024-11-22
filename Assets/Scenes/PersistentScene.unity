@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7828003677360839138, guid: 89cac3c1ffcec52479e1e463adfde9b7, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1037390695}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
