@@ -56,14 +56,14 @@ namespace Interactables.Components
                                 if (itemData.guid.Equals(guid)) { item.Hud.addToInventory(itemData.prefab); }
                             }
                             interactable.changer.NextSceneState(itemInteractive.guid, interactableGUID);
-                            //var newItem = new InvItem(combination.giveID);
-                            //newItem.AddItem();
                             break;
                         case InvItem.CombinationFunctions.EnableInteraction:
                             interactable.changer.NextSceneState(itemInteractive.guid, interactableGUID);
-                            interactable.activated = true; 
+                            interactable.activated = true;
+                            if (itemInteractive.audio != null) { interactable.PlayAudio(itemInteractive.audio); }
                             break; // Enable the interactable functionality of the static
                         case InvItem.CombinationFunctions.DeleteStatic:
+                            if (itemInteractive.audio != null) { interactable.PlayAudio(itemInteractive.audio); }
                             interactable.changer.NextSceneState(itemInteractive.guid, interactableGUID);
                             Destroy(_interactObject.gameObject); break;
                         default: throw new ArgumentOutOfRangeException();
