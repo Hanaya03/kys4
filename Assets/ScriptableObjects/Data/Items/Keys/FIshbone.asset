@@ -15,6 +15,12 @@ MonoBehaviour:
   guid: Items/Fishbone
   inspectMessage:
   - It's a fish bone. I wonder if I can put this in anything.
+  - "I pull a long, thin fishbone out of the fish\u2019s cavity. Looks like a lockpick
+    from my set over at the precinct."
+  - 
+  - 'I jiggle the bone in the lock and give it a bit waggle. I scrape it against
+    the internals of the lock and can clearly see it deteriorate with each wag. One
+    sturdy push then, - click! That''s the good stuff right there. '
   combinations:
   - staticID: Static/Door/HuntingLodge
     function: 1

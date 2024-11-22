@@ -3,6 +3,7 @@ using UnityEngine;
 using Interactables.Components;
 using TriInspector;
 using UnityEngine.SceneManagement;
+using HUD;
 
 namespace Interactables
 {
@@ -14,6 +15,7 @@ namespace Interactables
     [HideMonoScript]
     public class Static : Interactives
     {
+        private HUD.hudManager _hud;
         [Tooltip("Whether this interactive is enabled and can be clicked on.")]
         public bool activated;
         
@@ -23,6 +25,15 @@ namespace Interactables
 
         [Tooltip("The function that will be ran when this entity is clicked on.")]
         public StaticFunctions[] staticFunctions;
+
+        [SerializeField] private AudioSource audio;
+
+        void Start()
+        {
+            base.Start();
+            _hud = GameObject.FindWithTag("HUD").GetComponent<hudManager>();
+            audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
+        }
         
         /// <summary> Run the chosen static function for this static object</summary>
         public void RunStaticFunction()
@@ -53,7 +64,6 @@ namespace Interactables
         /// the current scene. </summary>
         private async void ChangeScene()
         {
-            
             audio.Play();
             var room = interactive.guid.Split("Static/Door/")[1];
             SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/GameScenes/" + room + ".unity"));

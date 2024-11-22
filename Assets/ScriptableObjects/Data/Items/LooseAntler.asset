@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: LooseAntler
   m_EditorClassIdentifier: 
   guid: Items/LooseAntler
-  inspectMessage: []
+  inspectMessage:
+  - A single deer antler. The bone leaves chalky white bone ash residue on my hand.
+    Its length makes it possible to prod things from a safe distance.
+  - 'The deer stares out to the grimy room. One of its antlers is clearly fissured.
+    With no force whatsoever, I tear and detach the antler from the inanimate deer
+    head. '
   combinations:
   - staticID: Static/BearTrap
     function: 0
