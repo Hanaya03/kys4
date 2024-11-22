@@ -53,6 +53,9 @@ namespace HUD
             if(Input.GetKeyDown(KeyCode.RightArrow)){
                 shiftInventoryRight();
             }
+            if(Input.GetKeyDown("tab")){
+                invertHudStatus();
+            }
         }
     
         public void addToInventory(GameObject toAdd){
@@ -133,6 +136,11 @@ namespace HUD
         
         public void invertHudStatus()
         {
+            if(inputManager.IsInputLocked){
+                inputManager.UnlockInput();
+            }else{
+                inputManager.LockInput();
+            }
             GameObject child = transform.GetChild(0).gameObject;
             child.SetActive(!child.activeSelf);
         }
