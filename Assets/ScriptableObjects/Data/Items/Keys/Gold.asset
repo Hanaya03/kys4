@@ -13,7 +13,18 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   guid: Items/Keys/Gold
-  inspectMessage: []
+  inspectMessage:
+  - 1
+  - what a beautiful shine. This must open the golden lock.
+  - 'It slides in without resistance. A simple turn then - *click. One. last. click.
+    Something about it wasn''t as exciting as the past few clicks. Nevertheless,
+    Im I''m heading in '
+  - 'It slides in without resistance. A simple turn then - *click. One. last. click.
+    Something about it wasn''t as exciting as the past few clicks. Nevertheless,
+    Im I''m heading in.  '
+  - 'It slides in without resistance. A simple turn then - *click. One. last. click.
+    Something about it wasn''t as exciting as the past few clicks. Nevertheless,
+    Im I''m heading in.  '
   combinations:
   - staticID: Static/MainLock
     function: 2

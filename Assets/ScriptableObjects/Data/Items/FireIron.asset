@@ -18,6 +18,14 @@ MonoBehaviour:
     stained with snowy white ash. It was likely used to shuffle around dying clumps
     of hot charcoal. '
   - A heavy, steel spear like rod.
+  - 'A slight push displaces the drywall. I grab a piece and tear it off the wall
+    then do the same for the rest of the chunks until I make a human sized opening.
+    All there is now are a ton of pipes. '
+  - 4
+  - 'I shuffle around the fireplace intermittently, embers dart out of the hot coals
+    flying through then dying mid-air. Beneath a layer of ashes is what appears to
+    be a stem and hole of a key. I inch the hook towards the hole and snatch a hot
+    rusted key from the bed of ashes. '
   combinations:
   - staticID: Static/Fireplace
     function: 0
@@ -30,4 +38,5 @@ MonoBehaviour:
     consumeStatic: 0
     giveID: 
   prefab: {fileID: 2169524933392756998, guid: cc699130be95e4df18042c282bff5da5, type: 3}
-  audio: {fileID: 0}
+  audio:
+  - {fileID: 0}

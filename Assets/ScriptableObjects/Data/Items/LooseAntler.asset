@@ -19,6 +19,11 @@ MonoBehaviour:
   - 'The deer stares out to the grimy room. One of its antlers is clearly fissured.
     With no force whatsoever, I tear and detach the antler from the inanimate deer
     head. '
+  - 3
+  - 4
+  - I slowly provide pressure onto the bear trap trigger mechanism. It uncontrollably
+    jumps, bites halfway through the antler bone, and latches onto it. A key falls
+    onto the floor
   combinations:
   - staticID: Static/BearTrap
     function: 0
@@ -26,4 +31,5 @@ MonoBehaviour:
     consumeStatic: 1
     giveID: Items/Keys/Iron
   prefab: {fileID: 2169524933392756998, guid: 371f829a9d946449c91bf9cec38e2ed5, type: 3}
-  audio: {fileID: 0}
+  audio:
+  - {fileID: 0}

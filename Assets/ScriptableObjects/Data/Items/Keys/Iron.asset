@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: 
   guid: Items/Keys/Iron
-  inspectMessage: []
+  inspectMessage:
+  - 1
+  - 2
+  - "I tried one lock after another. The key failed again and again but on the last
+    lock\u2026 a sweet and melodious click is heard. Lock unlocked"
+  - 4
+  - 5
   combinations:
   - staticID: Static/MainLock
     function: 2
