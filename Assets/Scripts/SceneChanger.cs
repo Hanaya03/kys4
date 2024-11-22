@@ -8,7 +8,7 @@ using HUD;
 
 public class SceneChanger : MonoBehaviour
 {
-
+    private hudManager _hud;
     private Initializer _initializer;
     
     private async void Start()
