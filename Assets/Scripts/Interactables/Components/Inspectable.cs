@@ -20,10 +20,8 @@ namespace Interactables.Components
             if (Input.GetMouseButtonDown(1))
             {
                 Debug.Log("M2 input!");
-<<<<<<< HEAD
                 if (interactable.interactive.inspectMessage.Length <= 0) return;
                 interactable.Hud.Inspect(interactable);
-=======
                 //if (interactable.interactive.inspectMessage.Length <= 0) return;
                 if (interactable.interactive.guid == "Items/Note")
                 {
@@ -31,7 +29,6 @@ namespace Interactables.Components
                     interactable.PlayAudio(data.audio[1]);
                 }
                 //interactable.Hud.Inspect(interactable);
->>>>>>> main
             }
         }
     }

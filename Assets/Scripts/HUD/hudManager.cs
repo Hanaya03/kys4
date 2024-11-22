@@ -12,7 +12,7 @@ namespace HUD
         private TextMeshProUGUI tmpUI;
         private  GameObject textObject;
         private int startingItemDisplayIndex;
-        private int maxItemDisplayCount = 6;
+        private int maxItemDisplayCount = 8;
         private int screenWidth = 1920;
         public List<GameObject> itemList = new List<GameObject>();
         public List<string> itemGUIDList = new List<string>();
@@ -202,15 +202,15 @@ namespace HUD
         }
 
         public void hideItems(){
-            transform.GetChild(1).GetChild(6).gameObject.SetActive(true);
-            for(int x = 7; x < transform.GetChild(1).childCount; x++){
+            transform.GetChild(1).GetChild(8).gameObject.SetActive(true);
+            for(int x = 9; x < transform.GetChild(1).childCount; x++){
                 transform.GetChild(1).GetChild(x).gameObject.SetActive(false);
             }
         }
 
         public void showItems(){
-            transform.GetChild(1).GetChild(6).gameObject.SetActive(false);
-            for(int x = 7; x < transform.GetChild(1).childCount; x++){
+            transform.GetChild(1).GetChild(8).gameObject.SetActive(false);
+            for(int x = 9; x < transform.GetChild(1).childCount; x++){
                 transform.GetChild(1).GetChild(x).gameObject.SetActive(true);
             }
         }
