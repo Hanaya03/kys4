@@ -10,8 +10,9 @@ public class SceneChanger : MonoBehaviour
 
     private Initializer _initializer;
     
-    private void Start()
+    private async void Start()
     {
+        await UniTask.WaitUntil(() => SceneManager.GetSceneByPath("Assets/Scenes/PersistentScene.unity").isLoaded);
         _initializer = GameObject.FindWithTag("Initializer").GetComponent<Initializer>();
     }
 
@@ -25,6 +26,18 @@ public class SceneChanger : MonoBehaviour
         await SceneManager.LoadSceneAsync("Assets/Scenes/GameScenes/MeatClosetRestroom.unity", LoadSceneMode.Additive);
         await _initializer.SetScenes();
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByPath("Assets/Scenes/MenuScenes/MainMenu.unity"));
+    }
+
+    public void PlayAgain()
+    {
+        PlayAgainMethod();
+    }
+
+    private async UniTask PlayAgainMethod()
+    {
+        await SceneManager.LoadSceneAsync("Assets/Scenes/GameScenes/MeatClosetRestroom.unity", LoadSceneMode.Additive);
+        await _initializer.SetScenes();
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByPath("Assets/Scenes/MenuScenes/Win.unity"));
     }
 
     public void QuitGame()
