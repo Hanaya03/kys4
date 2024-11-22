@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1133187948963974112}
   - component: {fileID: 5903292508340653792}
   - component: {fileID: 2595345007859750051}
-  - component: {fileID: 1973318420780521124}
   - component: {fileID: 7828003677360839138}
   m_Layer: 5
   m_Name: HUD_Canvas
@@ -104,19 +103,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1973318420780521124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217664770372929977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3e41c1088d71bf48926981d59f3abcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryHUD: {fileID: 2889739670594463738}
 --- !u!114 &7828003677360839138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemList: []
+  itemGUIDList: []
+  audio: {fileID: 0}
 --- !u!1 &2889739670594463738
 GameObject:
   m_ObjectHideFlags: 0
