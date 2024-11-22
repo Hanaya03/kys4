@@ -26,8 +26,6 @@ namespace Interactables
         [Tooltip("The function that will be ran when this entity is clicked on.")]
         public StaticFunctions[] staticFunctions;
 
-        [SerializeField] private AudioSource audio;
-
         void Start()
         {
             base.Start();
