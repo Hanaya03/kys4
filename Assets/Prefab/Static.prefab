@@ -78,9 +78,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactive: {fileID: 0}
   changer: {fileID: 0}
+  audio: {fileID: 3042179190480821021}
   activated: 0
   staticFunctions: 
-  audio: {fileID: 3042179190480821021}
 --- !u!61 &112836040450408542
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -13,10 +13,22 @@ MonoBehaviour:
   m_Name: Note
   m_EditorClassIdentifier: 
   guid: Items/Note
+<<<<<<< HEAD:Assets/ScriptableObjects/Data/Items/Note.asset
   inspectMessage:
   - a note
   - You rifle through the pages of the book. Eventually you come upon a page with
     a note. A quick skim through the note reveals a 3 digit code.
   combinations: []
+=======
+  inspectMessage: []
+  combinations:
+  - staticID: Static/Safe
+    function: 2
+    consumeItem: 0
+    consumeStatic: 0
+    giveID: 
+>>>>>>> main:Assets/ScriptableObjects/Data/Items/Keys/Note.asset
   prefab: {fileID: 2169524933392756998, guid: 8995a838561064fec97692452fe8547f, type: 3}
-  audio: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: 77b5aec571c884a32b8a705b4d6c981e, type: 3}
+  - {fileID: 8300000, guid: 36976847c1b514a9cbd380bc6eb6ea44, type: 3}

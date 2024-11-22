@@ -2,6 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using Interactables.Data;
 using Unity.VisualScripting;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 
 namespace Interactables.Components
@@ -21,6 +22,11 @@ namespace Interactables.Components
         private async void Start()
         {
             _dragging = true;
+            if (item.interactive.guid == "Items/Note")
+            {
+                var data = (ItemData)item.interactive;
+                item.PlayAudio(data.audio[1]);
+            }
             await UniTask.Delay(10);
             item.Hud.invertHudStatus(); // Hide the HUD after selecting an item
         
@@ -62,10 +68,10 @@ namespace Interactables.Components
                             interactable.changer.NextSceneState(itemInteractive.guid, interactableGUID);
                             interactable.activated = true;
                             item.Hud.displayText(item.interactive.inspectMessage[3]);
-                            if (itemInteractive.audio != null) { interactable.PlayAudio(itemInteractive.audio); }
+                            if (itemInteractive.audio != null) { interactable.PlayAudio(itemInteractive.audio[0]); }
                             break; // Enable the interactable functionality of the static
                         case InvItem.CombinationFunctions.DeleteStatic:
-                            if (itemInteractive.audio != null) { interactable.PlayAudio(itemInteractive.audio); }
+                            if (itemInteractive.audio != null) { interactable.PlayAudio(itemInteractive.audio[0]); }
                             interactable.changer.NextSceneState(itemInteractive.guid, interactableGUID);
                             item.Hud.displayText(item.interactive.inspectMessage[2]);
                             Destroy(_interactObject.gameObject); break;

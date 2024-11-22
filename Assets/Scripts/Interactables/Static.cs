@@ -76,11 +76,6 @@ namespace Interactables
             SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/MenuScenes/" + "Win" + ".unity"));
             UniTask.Yield();
         }
-
-        public void PlayAudio(AudioClip clip)
-        {
-            audio.PlayOneShot(clip);
-        }
         
     }
 }

@@ -32,4 +32,5 @@ MonoBehaviour:
     consumeStatic: 0
     giveID: Items/BloodArrow
   prefab: {fileID: 2169524933392756998, guid: 85f9e806325937b4d8534d98f5d436d0, type: 3}
-  audio: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: 60e1a3addc15642bcaf344e99c01b5dd, type: 3}
