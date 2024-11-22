@@ -19,11 +19,18 @@ namespace Interactables
 
         public hudManager Hud { private set; get; }
         private GameObject _hudObject;
+        [SerializeField] protected AudioSource audio;
         
         protected void Start()
         {
             _hudObject = GameObject.FindWithTag("HUD");
             Hud = _hudObject.GetComponent<hudManager>();
+            audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
+        }
+        
+        public void PlayAudio(AudioClip clip)
+        {
+            audio.PlayOneShot(clip);
         }
         
     }

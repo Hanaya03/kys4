@@ -19,6 +19,7 @@ public class InvItemClick : MonoBehaviour, IPointerDownHandler
     
     public void OnPointerDown(PointerEventData _)
     {
+        if(Input.GetMouseButton(1)) return;
         _hud.SetUsingItem(_hud.itemGUIDList.IndexOf(data.guid));
         onClick.Invoke();
     }

@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad394703c152e4045ae6f4d875382ff6, type: 3}
-  m_Name: Note
+  m_Name: Fishbone
   m_EditorClassIdentifier: 
-  guid: Items/Note
-  inspectMessage: []
+  guid: Items/Fishbone
+  inspectMessage:
+  - It's a fish bone. I wonder if I can put this in anything.
   combinations:
-  - staticID: Static/Safe
-    function: 2
-    consumeItem: 0
+  - staticID: Static/Door/HuntingLodge
+    function: 1
+    consumeItem: 1
     consumeStatic: 0
     giveID: 
-  prefab: {fileID: 2169524933392756998, guid: 8995a838561064fec97692452fe8547f, type: 3}
-  audio: {fileID: 8300000, guid: de135a3532dc840b39f01978b1506c3b, type: 3}
+  prefab: {fileID: 2169524933392756998, guid: a916177c8b7e0400e926241dfff0ac7d, type: 3}
+  audio:
+  - {fileID: 8300000, guid: 77b5aec571c884a32b8a705b4d6c981e, type: 3}

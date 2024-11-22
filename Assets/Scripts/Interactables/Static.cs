@@ -23,14 +23,6 @@ namespace Interactables
 
         [Tooltip("The function that will be ran when this entity is clicked on.")]
         public StaticFunctions[] staticFunctions;
-
-        [SerializeField] private AudioSource audio;
-
-        void Start()
-        {
-            base.Start();
-            audio = GameObject.FindWithTag("AudioPlayer").GetComponent<AudioSource>();
-        }
         
         /// <summary> Run the chosen static function for this static object</summary>
         public void RunStaticFunction()
@@ -73,11 +65,6 @@ namespace Interactables
             await SceneManager.LoadSceneAsync("Assets/Scenes/MenuScenes/" + "Win" + ".unity");
             SceneManager.SetActiveScene(SceneManager.GetSceneByPath("Assets/Scenes/MenuScenes/" + "Win" + ".unity"));
             UniTask.Yield();
-        }
-
-        public void PlayAudio(AudioClip clip)
-        {
-            audio.PlayOneShot(clip);
         }
         
     }

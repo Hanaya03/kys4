@@ -28,7 +28,7 @@ namespace Interactables.Data
         [Tooltip("List of item-to-static combinations available for this item.")]
         [SerializeField] public ItemCombinations[] combinations;
         [SerializeField] public GameObject prefab;
-        [SerializeField] public AudioClip audio;
+        [SerializeField] public AudioClip[] audio;
 
     }
 

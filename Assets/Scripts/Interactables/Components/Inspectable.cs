@@ -1,9 +1,7 @@
 using System.Threading.Tasks;
 using TriInspector;
 using UnityEngine;
-using Interactables;
-using HUD;
-using Interactables;
+using Interactables.Data;
 
 namespace Interactables.Components
 {
@@ -22,8 +20,13 @@ namespace Interactables.Components
             if (Input.GetMouseButtonDown(1))
             {
                 Debug.Log("M2 input!");
-                if (interactable.interactive.inspectMessage.Length <= 0) return;
-                interactable.Hud.Inspect(interactable);
+                //if (interactable.interactive.inspectMessage.Length <= 0) return;
+                if (interactable.interactive.guid == "Items/Note")
+                {
+                    ItemData data = (ItemData) interactable.interactive;
+                    interactable.PlayAudio(data.audio[1]);
+                }
+                //interactable.Hud.Inspect(interactable);
             }
         }
     }
