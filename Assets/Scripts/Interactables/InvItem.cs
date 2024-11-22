@@ -18,7 +18,7 @@ namespace Interactables
         /// The different functions that can be executed when dragging an item onto a static entity
         /// </summary>
         public enum CombinationFunctions
-        { GiveItem, EnableInteraction, DeleteStatic }
+        { GiveItem, EnableInteraction, DeleteStatic, EnableSprite }
 
 
         public void UseItem()
